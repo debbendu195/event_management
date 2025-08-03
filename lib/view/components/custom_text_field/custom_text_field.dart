@@ -35,6 +35,11 @@ class CustomTextField extends StatefulWidget {
     this.prefixIcon,
     this.onTap,
     this.isDens = false,
+    this.height = 60,
+    this.weight = 385,
+    this.fontSize = 14,
+    this.fontWeight = FontWeight.w400,
+
   });
 
   final TextEditingController? textEditingController;
@@ -64,6 +69,10 @@ class CustomTextField extends StatefulWidget {
   final List<TextInputFormatter>? inputFormatters;
   final VoidCallback? onTap;
   final bool? isDens;
+  final double? height;
+  final double? weight;
+  final double? fontSize;
+  final FontWeight? fontWeight;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
@@ -74,72 +83,76 @@ class _CustomTextFieldState extends State<CustomTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      onTap: widget.onTap,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
-      inputFormatters: widget.inputFormatters,
-      onFieldSubmitted: widget.onFieldSubmitted,
-      readOnly: widget.readOnly,
-      controller: widget.textEditingController,
-      focusNode: widget.focusNode,
-      maxLength: widget.maxLength,
-      keyboardType: widget.keyboardType,
-      textInputAction: widget.textInputAction,
-      cursorColor: widget.cursorColor,
-      style: widget.inputTextStyle ??
-          GoogleFonts.poppins(
-              fontSize: 16,
-              fontWeight: FontWeight.w400,
-              color: AppColors.black_03),
-      onChanged: widget.onChanged,
-      maxLines: widget.maxLines,
-      obscureText: widget.isPassword ? obscureText : false,
-      validator: widget.validator,
-      textAlign: widget.textAlign,
-      textAlignVertical: widget.textAlignVertical,
-      decoration: InputDecoration(
-        isDense: widget.isDens,
-        errorMaxLines: 2,
-        hintText: widget.hintText,
-        hintStyle: widget.hintStyle ??
-            GoogleFonts.inter(
+    return Container(
+      height: widget.height,
+      width: widget.weight,
+      child: TextFormField(
+        onTap: widget.onTap,
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        inputFormatters: widget.inputFormatters,
+        onFieldSubmitted: widget.onFieldSubmitted,
+        readOnly: widget.readOnly,
+        controller: widget.textEditingController,
+        focusNode: widget.focusNode,
+        maxLength: widget.maxLength,
+        keyboardType: widget.keyboardType,
+        textInputAction: widget.textInputAction,
+        cursorColor: widget.cursorColor,
+        style: widget.inputTextStyle ??
+            GoogleFonts.poppins(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
-                color: AppColors.titleTextClr),
-        fillColor: widget.fillColor,
-        filled: true,
-        prefixIcon: widget.prefixIcon,
-        suffixIcon: widget.isPassword
-            ? GestureDetector(
-                onTap: toggle,
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Icon(obscureText ? Icons.visibility_off : Icons.visibility, color: Colors.grey,),
+                color: AppColors.black_03),
+        onChanged: widget.onChanged,
+        maxLines: widget.maxLines,
+        obscureText: widget.isPassword ? obscureText : false,
+        validator: widget.validator,
+        textAlign: widget.textAlign,
+        textAlignVertical: widget.textAlignVertical,
+        decoration: InputDecoration(
+          isDense: widget.isDens,
+          errorMaxLines: 2,
+          hintText: widget.hintText,
+          hintStyle: widget.hintStyle ??
+              GoogleFonts.inter(
+                  fontSize: widget.fontSize,
+                  fontWeight: widget.fontWeight,
+                  color: AppColors.titleTextClr),
+          fillColor: widget.fillColor,
+          filled: true,
+          prefixIcon: widget.prefixIcon,
+          suffixIcon: widget.isPassword
+              ? GestureDetector(
+                  onTap: toggle,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16),
+                    child: Icon(obscureText ? Icons.visibility_off : Icons.visibility, color: Colors.grey,),
 
-                  /*SvgPicture.asset(
-                    obscureText ? AppIcons.eyeOff : AppIcons.eye,
-                    height: 22,
-                    width: 22,
-                    color: AppColors.black,
-                  ),*/
-                ),
-              )
-            : widget.suffixIcon,
-        suffixIconColor: widget.suffixIconColor,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.fieldBorderRadius),
-          borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
-          gapPadding: 0,
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.fieldBorderRadius),
-          borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
-          gapPadding: 0,
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(widget.fieldBorderRadius),
-          borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
-          gapPadding: 0,
+                    /*SvgPicture.asset(
+                      obscureText ? AppIcons.eyeOff : AppIcons.eye,
+                      height: 22,
+                      width: 22,
+                      color: AppColors.black,
+                    ),*/
+                  ),
+                )
+              : widget.suffixIcon,
+          suffixIconColor: widget.suffixIconColor,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(widget.fieldBorderRadius),
+            borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
+            gapPadding: 0,
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(widget.fieldBorderRadius),
+            borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
+            gapPadding: 0,
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(widget.fieldBorderRadius),
+            borderSide: BorderSide(color: widget.fieldBorderColor, width: 1),
+            gapPadding: 0,
+          ),
         ),
       ),
     );

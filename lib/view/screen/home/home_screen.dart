@@ -29,16 +29,14 @@ class HomeScreen extends StatelessWidget {
           ),
           SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 80),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 80),
               child: Column(
                 children: [
                   Row(
                     children: [
                       CircleAvatar(
                         radius: 30, // Adjust size
-                        backgroundImage: AssetImage(
-                          'assets/images/img.jpg',
-                        ),
+                        backgroundImage: AssetImage('assets/images/img.jpg'),
                       ),
                       SizedBox(width: 20),
                       // CustomImage(imageSrc: AppImages.img, height: 50, width: 50,),
@@ -112,7 +110,7 @@ class HomeScreen extends StatelessWidget {
                             color: AppColors.white,
                           ),
                           child: InkWell(
-                            onTap: (){
+                            onTap: () {
                               Get.toNamed(AppRoutes.createEventScreen);
                             },
                             child: Icon(Icons.add, color: AppColors.green_01),
@@ -237,25 +235,38 @@ class HomeScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       Get.toNamed(AppRoutes.groupEventScreen);
                     },
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 10),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
                       child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.r),
+                        ),
+                        clipBehavior: Clip.antiAlias,
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.vertical(
-                                top: Radius.circular(10.r),
-                              ),
-                              child: CustomImage(imageSrc: AppImages.card),
+                            // Top image section
+                            Image.asset(
+                              'assets/images/card.png',
+                              fit: BoxFit.cover,
+                              height: 150.h,
+                              width: double.infinity,
                             ),
+
+                            // Bottom content section
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(12.w),
                               child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
+                                  // Title and Status
                                   Row(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       CustomText(
                                         text: 'Summer Music Festival',
@@ -264,54 +275,56 @@ class HomeScreen extends StatelessWidget {
                                       ),
                                       Spacer(),
                                       Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 8.w,
+                                          vertical: 4.h,
+                                        ),
                                         decoration: BoxDecoration(
                                           color: Colors.yellow.shade100,
                                           borderRadius: BorderRadius.circular(
                                             12.r,
                                           ),
                                         ),
-                                        child: Column(
-                                          children: [
-                                            CustomText(
-                                              text: 'upcoming',
-                                              fontSize: 12.sp,
-                                              color: Colors.black87,
-                                            ),
-                                          ],
+                                        child: CustomText(
+                                          text: 'upcoming',
+                                          fontSize: 12.sp,
+                                          color: Colors.black87,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 12.h),
+                                  SizedBox(height: 10.h),
+
+                                  // Date & Time
                                   Row(
                                     children: [
                                       Icon(
                                         Icons.calendar_today_outlined,
-                                        size: 19.r,
+                                        size: 18.r,
                                         color: AppColors.grey,
                                       ),
                                       SizedBox(width: 6.w),
                                       CustomText(
-                                        text: 'Aug 15, 2025, 4:00PM',
+                                        text: 'Aug 15, 2025 • 4:00PM',
                                         fontSize: 14.sp,
-                                        fontWeight: FontWeight.w400,
                                         color: AppColors.grey,
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 12.h),
+                                  SizedBox(height: 8.h),
+
+                                  // Attendees
                                   Row(
                                     children: [
                                       Icon(
                                         Icons.people_outline,
-                                        size: 20.r,
+                                        size: 18.r,
                                         color: AppColors.grey,
                                       ),
                                       SizedBox(width: 6.w),
                                       CustomText(
                                         text: '245 attendees',
                                         fontSize: 14.sp,
-                                        fontWeight: FontWeight.w400,
                                         color: AppColors.grey,
                                       ),
                                     ],
@@ -325,21 +338,33 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5,),
+                    padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(16.r),
+                      ),
+                      clipBehavior: Clip.antiAlias,
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.vertical(
-                              top: Radius.circular(10.r),
-                            ),
-                            child: CustomImage(imageSrc: AppImages.card),
+                          Image.asset(
+                            'assets/images/card.png',
+                            fit: BoxFit.cover,
+                            height: 150.h,
+                            width: double.infinity,
                           ),
+
+                          // Bottom content section
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(12.w),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
+                                // Title and Status
                                 Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     CustomText(
                                       text: 'Summer Music Festival',
@@ -348,54 +373,56 @@ class HomeScreen extends StatelessWidget {
                                     ),
                                     Spacer(),
                                     Container(
+                                      padding: EdgeInsets.symmetric(
+                                        horizontal: 8.w,
+                                        vertical: 4.h,
+                                      ),
                                       decoration: BoxDecoration(
                                         color: Colors.yellow.shade100,
                                         borderRadius: BorderRadius.circular(
                                           12.r,
                                         ),
                                       ),
-                                      child: Column(
-                                        children: [
-                                          CustomText(
-                                            text: 'upcoming',
-                                            fontSize: 12.sp,
-                                            color: Colors.black87,
-                                          ),
-                                        ],
+                                      child: CustomText(
+                                        text: 'upcoming',
+                                        fontSize: 12.sp,
+                                        color: Colors.black87,
                                       ),
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 12.h),
+                                SizedBox(height: 10.h),
+
+                                // Date & Time
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.calendar_today_outlined,
-                                      size: 19.r,
+                                      size: 18.r,
                                       color: AppColors.grey,
                                     ),
                                     SizedBox(width: 6.w),
                                     CustomText(
-                                      text: 'Aug 15, 2025, 4:00PM',
+                                      text: 'Aug 15, 2025 • 4:00PM',
                                       fontSize: 14.sp,
-                                      fontWeight: FontWeight.w400,
                                       color: AppColors.grey,
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 12.h),
+                                SizedBox(height: 8.h),
+
+                                // Attendees
                                 Row(
                                   children: [
                                     Icon(
                                       Icons.people_outline,
-                                      size: 20.r,
+                                      size: 18.r,
                                       color: AppColors.grey,
                                     ),
                                     SizedBox(width: 6.w),
                                     CustomText(
                                       text: '245 attendees',
                                       fontSize: 14.sp,
-                                      fontWeight: FontWeight.w400,
                                       color: AppColors.grey,
                                     ),
                                   ],

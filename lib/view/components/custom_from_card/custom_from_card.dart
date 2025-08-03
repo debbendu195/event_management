@@ -67,7 +67,7 @@ class CustomFormCard extends StatelessWidget {
           cursorColor: AppColors.black,
           hintStyle: GoogleFonts.inter(
               fontWeight: FontWeight.w400,
-              fontSize: 14,
+              fontSize: 16,
               color: AppColors.black_06),
           suffixIcon: suffixIcon,
           isPassword: isPassword,

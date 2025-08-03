@@ -6,6 +6,7 @@ import '../../view/screen/chatroom/chatroom_screen.dart';
 import '../../view/screen/create_post_screen/Create_story_screen.dart';
 import '../../view/screen/create_post_screen/create_post_screen.dart';
 import '../../view/screen/create_post_screen/post_story.dart';
+import '../../view/screen/dmOver/home/dm_home_screen.dart';
 import '../../view/screen/event/all_events.dart';
 import '../../view/screen/event/create_event_screen.dart';
 import '../../view/screen/event/past_screen.dart';
@@ -56,6 +57,7 @@ class AppRoutes {
   static const String supportScreen = "/supportScreen";
   static const String changePassScreen = "/ChangePassScreen";
   static const String privacyScreen = "/PrivacyScreen";
+  static const String dmHomeScreen = "/DmHomeScreen";
 
 
   static List<GetPage> routes = [
@@ -84,6 +86,7 @@ class AppRoutes {
     GetPage(name: stripeScreen, page: () => StripeScreen()),
     GetPage(name: changePassScreen, page: () => ChangePassScreen()),
     GetPage(name: privacyScreen, page: () => PrivacyScreen()),
+    GetPage(name: dmHomeScreen, page: () => DmHomeScreen()),
 
 
 
