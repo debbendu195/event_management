@@ -3,9 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 
-import '../../utils/app_colors/app_colors.dart';
-
-
+import '../../../utils/app_colors/app_colors.dart';
 
 class CustomPinCode extends StatelessWidget {
   const CustomPinCode({super.key, required this.controller});

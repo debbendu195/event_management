@@ -2,31 +2,30 @@
 import 'package:get/get.dart';
 
 import '../../view/screen/chat_screen/chat_screen.dart';
-import '../../view/screen/chatroom/chatroom_screen.dart';
+import '../../view/screen/event_screen/view/invite_screen.dart';
+import '../../view/screen/home_screen/view/home_screen.dart';
+import '../../view/screen/profile_screen/view/settings/change_pass_screen.dart';
+import '../../view/screen/profile_screen/view/settings/edit_profile_screen.dart';
+import '../../view/screen/profile_screen/view/settings/payment_screen.dart';
+import '../../view/screen/profile_screen/view/settings/privacy_screen.dart';
+import '../../view/screen/profile_screen/view/settings/settings_screen.dart';
+import '../../view/screen/profile_screen/view/settings/stripe_screen.dart';
+import '../../view/screen/social_screen/view/chatroom_screen.dart';
 import '../../view/screen/create_post_screen/Create_story_screen.dart';
 import '../../view/screen/create_post_screen/create_post_screen.dart';
 import '../../view/screen/create_post_screen/post_story.dart';
 import '../../view/screen/dmOver/home/dm_home_screen.dart';
-import '../../view/screen/event/all_events.dart';
-import '../../view/screen/event/create_event_screen.dart';
-import '../../view/screen/event/past_screen.dart';
-import '../../view/screen/event/upcoming_screen.dart';
-import '../../view/screen/event_screen/group_event_screen.dart';
-import '../../view/screen/event_screen/invite_screen.dart';
-import '../../view/screen/group/group_screen.dart';
-import '../../view/screen/home/home_screen.dart';
-import '../../view/screen/messageList/message_list_screen.dart';
-import '../../view/screen/notification/notification_screen.dart';
-import '../../view/screen/profile/profile_screen.dart';
+import '../../view/screen/event_screen/view/all_events.dart';
+import '../../view/screen/home_screen/view/create_event_screen.dart';
+import '../../view/screen/event_screen/view/past_screen.dart';
+import '../../view/screen/event_screen/view/upcoming_screen.dart';
+import '../../view/screen/home_screen/view/group_event_screen.dart';
+import '../../view/screen/social_screen/view/group_screen.dart';
+import '../../view/screen/message_screen/view/message_list_screen.dart';
+import '../../view/screen/home_screen/view/notification_screen.dart';
+import '../../view/screen/profile_screen/view/profile_screen.dart';
 import '../../view/screen/profileRole/profile_role_screen.dart';
-import '../../view/screen/settings/change_pass_screen.dart';
-import '../../view/screen/settings/edit_profile_screen.dart';
-import '../../view/screen/settings/payment_screen.dart';
-import '../../view/screen/settings/privacy_screen.dart';
-import '../../view/screen/settings/settings_screen.dart';
-import '../../view/screen/settings/stripe_screen.dart';
-import '../../view/screen/settings/support_screen.dart';
-import '../../view/screen/social_feed/social_feed.dart';
+import '../../view/screen/social_screen/view/social_feed.dart';
 
 
 

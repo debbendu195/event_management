@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../core/app_routes/app_routes.dart';
+import '../../../utils/app_colors/app_colors.dart';
+import '../../../utils/app_images/app_images.dart';
 import '../../components/custom_button/custom_button.dart';
-import '../../components/custom_from_card/custom_from_card.dart';
 import '../../components/custom_image/custom_image.dart';
 import '../../components/custom_royel_appbar/custom_royel_appbar.dart';
 import '../../components/custom_text/custom_text.dart';
 import '../../components/custom_text_field/custom_text_field.dart';
-import '../../utils/app_colors/app_colors.dart';
-import '../../utils/app_images/app_images.dart';
 
 class CreateStoryScreen extends StatelessWidget {
   const CreateStoryScreen({super.key});

@@ -1,39 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
 import '../../../utils/app_colors/app_colors.dart';
 import '../../../utils/app_images/app_images.dart';
-import '../../screen/event_screen/view/all_events.dart';
-import '../../screen/home_screen/view/home_screen.dart';
+import '../../screen/dmOver/favourite/favoutite_screen.dart';
+import '../../screen/dmOver/home/dm_home_screen.dart';
 import '../../screen/message_screen/view/message_list_screen.dart';
 import '../../screen/profile_screen/view/profile_screen.dart';
 import '../../screen/social_screen/view/social_feed.dart';
 
-class NavBar extends StatefulWidget {
+class DmNab extends StatefulWidget {
   final int currentIndex;
-
-  const NavBar({required this.currentIndex, super.key});
+  const DmNab({required this.currentIndex, super.key});
 
   @override
-  State<NavBar> createState() => _UserNavBarState();
+  State<DmNab> createState() => _DmNabState();
 }
 
-class _UserNavBarState extends State<NavBar> {
+class _DmNabState extends State<DmNab> {
   late int bottomNavIndex;
 
   final List<String> selectedIcon = [
     AppImages.home2,
-    AppImages.calendar,
+    AppImages.heart_bold,
     AppImages.group,
     AppImages.comment,
     AppImages.user,
   ];
   final List<String> unselectedIcon = [
     AppImages.home2,
-    AppImages.calendar,
-    AppImages.group,
+    AppImages.heart_bold,
+    AppImages.comments,
     AppImages.comment,
     AppImages.user,
   ];
@@ -50,19 +49,19 @@ class _UserNavBarState extends State<NavBar> {
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       decoration: BoxDecoration(
           color: AppColors.green_01,
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(40.r),
-          topRight: Radius.circular(40.r),
-        ),
-        border: Border.all(color: AppColors.grey_03,width: .2),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withValues(alpha: 0.1),
-            spreadRadius: 1,
-            blurRadius: 0,
-            offset: const Offset(3, 0),
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(40.r),
+            topRight: Radius.circular(40.r),
           ),
-        ]
+          border: Border.all(color: AppColors.grey_03,width: .2),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withValues(alpha: 0.1),
+              spreadRadius: 1,
+              blurRadius: 0,
+              offset: const Offset(3, 0),
+            ),
+          ]
       ),
       height: 85.h,
       width: MediaQuery.of(context).size.width,
@@ -104,25 +103,23 @@ class _UserNavBarState extends State<NavBar> {
 
       switch (index) {
         case 0:
-          Get.offAll(() => HomeScreen());
+          Get.offAll(() => DmHomeScreen());
           break;
         case 1:
-         Get.to(() => AllEvents());
+          Get.to(() => FavoutiteScreen());
           break;
         case 2:
-         Get.to(() => SocialFeed());
+          Get.to(() => SocialFeed());
           break;
         case 3:
-         Get.to(() => MessageListScreen());
+          Get.to(() => MessageListScreen());
           break;
         case 4:
-         Get.to(() => ProfileScreen());
+          Get.to(() => ProfileScreen());
           break;
       }
     }
   }
 }
-
-
 
 

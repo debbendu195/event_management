@@ -4,8 +4,9 @@ import 'package:time/core/app_routes/app_routes.dart';
 import 'package:time/view/components/custom_button/custom_button.dart';
 import 'package:time/view/components/custom_image/custom_image.dart';
 import 'package:time/view/components/custom_text/custom_text.dart';
-import 'package:time/view/utils/app_colors/app_colors.dart';
-import 'package:time/view/utils/app_images/app_images.dart';
+
+import '../../../utils/app_colors/app_colors.dart';
+import '../../../utils/app_images/app_images.dart';
 
 class ProfileRoleScreen extends StatelessWidget {
   const ProfileRoleScreen({super.key});

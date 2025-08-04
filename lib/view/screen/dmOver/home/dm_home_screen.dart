@@ -5,12 +5,21 @@ import 'package:time/view/components/custom_nav_bar/navbar.dart';
 import 'package:time/view/components/custom_text_field/custom_text_field.dart';
 
 import '../../../../core/app_routes/app_routes.dart';
+import '../../../../utils/app_colors/app_colors.dart';
+import '../../../components/custom_nav_bar/dm_nab.dart';
 import '../../../components/custom_text/custom_text.dart';
-import '../../../utils/app_colors/app_colors.dart';
 
 class DmHomeScreen extends StatelessWidget {
-  const DmHomeScreen({super.key});
+  DmHomeScreen({super.key});
 
+  // final List<IconData> navIcons = [
+  //   Icons.home_screen,
+  //   Icons.favorite,
+  //   Icons.chat_bubble_outline,
+  //   Icons.language,
+  //   Icons.person,
+  // ];
+  //
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -208,6 +217,39 @@ class DmHomeScreen extends StatelessWidget {
                         ],
                       ),
                     ),
+                    // Padding(
+                    //   padding: const EdgeInsets.all(16.0),
+                    //   child: Container(
+                    //     height: 80,
+                    //     decoration: BoxDecoration(
+                    //       color: Color(0xFF004D3C), // Dark green background
+                    //       borderRadius: BorderRadius.circular(40),
+                    //     ),
+                    //     child: Row(
+                    //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    //       children: [
+                    //         // Home - Selected
+                    //         Container(
+                    //           width: 50,
+                    //           height: 50,
+                    //           decoration: BoxDecoration(
+                    //             color: Colors.white,
+                    //             shape: BoxShape.circle,
+                    //           ),
+                    //           child: Icon(Icons.home, color: Colors.black),
+                    //         ),
+                    //         // Favorite
+                    //         Icon(Icons.favorite, color: Colors.grey.shade300, size: 30),
+                    //         // Chat
+                    //         Icon(Icons.chat_bubble_outline, color: Colors.grey.shade300, size: 30),
+                    //         // Globe
+                    //         Icon(Icons.language, color: Colors.grey.shade300, size: 30),
+                    //         // Profile
+                    //         Icon(Icons.person, color: Colors.grey.shade300, size: 30),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
                   ],
                 ),
               ),
@@ -215,6 +257,43 @@ class DmHomeScreen extends StatelessWidget {
           ),
         ],
       ),
+
+     bottomNavigationBar: DmNab(currentIndex: 0),
+
+      // bottomNavigationBar: NavBar(currentIndex: 0),
+      // bottomNavigationBar: Padding(
+      //   padding: const EdgeInsets.all(16.0),
+      //   child: Container(
+      //     height: 80,
+      //     decoration: BoxDecoration(
+      //       color: Color(0xFF004D3C), // Dark green background
+      //       borderRadius: BorderRadius.circular(40),
+      //     ),
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //       children: [
+      //         // Home - Selected
+      //         Container(
+      //           width: 50,
+      //           height: 50,
+      //           decoration: BoxDecoration(
+      //             color: Colors.white,
+      //             shape: BoxShape.circle,
+      //           ),
+      //           child: Icon(Icons.home_screen, color: Colors.black),
+      //         ),
+      //         // Favorite
+      //         Icon(Icons.favorite, color: Colors.grey.shade300, size: 30),
+      //         // Chat
+      //         Icon(Icons.chat_bubble_outline, color: Colors.grey.shade300, size: 30),
+      //         // Globe
+      //         Icon(Icons.language, color: Colors.grey.shade300, size: 30),
+      //         // Profile
+      //         Icon(Icons.person, color: Colors.grey.shade300, size: 30),
+      //       ],
+      //     ),
+      //   ),
+      // ),
     );
   }
 }

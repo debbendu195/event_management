@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../utils/app_colors/app_colors.dart';
+import '../../../utils/app_colors/app_colors.dart';
 import '../custom_text/custom_text.dart';
 import '../custom_text_field/custom_text_field.dart';
 
