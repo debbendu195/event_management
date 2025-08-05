@@ -7,6 +7,7 @@ class AppImages {
   static const String card_img = "$basePath/OBJECTS.png";
   static const String card_img2 = "$basePath/OBJECTS2.png";
   static const String img = "$basePath/img.jpg";
+  // static const String img1 = "$basePath/img1.png";
   static const String notification = "$basePath/notification.png";
   static const String card = "$basePath/card.png";
   static const String home2 = "$basePath/home2.svg";
@@ -26,7 +27,7 @@ class AppImages {
   static const String join = "$basePath/join.png";
   static const String invita = "$basePath/invita.png";
   static const String Vector = "$basePath/Vector.png";
-  static const String heart = "$basePath/heart1.png";
+  static const String heart = "$basePath/heart.png";
   static const String comments = "$basePath/comments.png";
   static const String share = "$basePath/share.png";
   static const String post = "$basePath/post.png";
@@ -40,6 +41,8 @@ class AppImages {
   static const String love = "$basePath/love.png";
   static const String heart_bold = "$basePath/heart_bold.svg";
   static const String comm = "$basePath/comm.svg";
+  static const String img1 = "$basePath/img1.png";
+  static const String pic = "$basePath/pic.png";
 
 
 

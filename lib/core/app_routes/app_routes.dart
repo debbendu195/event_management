@@ -2,6 +2,7 @@
 import 'package:get/get.dart';
 
 import '../../view/screen/chat_screen/chat_screen.dart';
+import '../../view/screen/dmOver/home_screen/view/dm_home_screen.dart';
 import '../../view/screen/event_screen/view/invite_screen.dart';
 import '../../view/screen/home_screen/view/home_screen.dart';
 import '../../view/screen/profile_screen/view/settings/change_pass_screen.dart';
@@ -14,7 +15,6 @@ import '../../view/screen/social_screen/view/chatroom_screen.dart';
 import '../../view/screen/create_post_screen/Create_story_screen.dart';
 import '../../view/screen/create_post_screen/create_post_screen.dart';
 import '../../view/screen/create_post_screen/post_story.dart';
-import '../../view/screen/dmOver/home/dm_home_screen.dart';
 import '../../view/screen/event_screen/view/all_events.dart';
 import '../../view/screen/home_screen/view/create_event_screen.dart';
 import '../../view/screen/event_screen/view/past_screen.dart';

@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import '../../../utils/app_colors/app_colors.dart';
 import '../../../utils/app_images/app_images.dart';
 import '../../screen/dmOver/favourite/favoutite_screen.dart';
-import '../../screen/dmOver/home/dm_home_screen.dart';
+import '../../screen/dmOver/home_screen/view/dm_home_screen.dart';
 import '../../screen/message_screen/view/message_list_screen.dart';
 import '../../screen/profile_screen/view/profile_screen.dart';
 import '../../screen/social_screen/view/social_feed.dart';
@@ -25,15 +25,15 @@ class _DmNabState extends State<DmNab> {
   final List<String> selectedIcon = [
     AppImages.home2,
     AppImages.heart_bold,
+    AppImages.comm,
     AppImages.group,
-    AppImages.comment,
     AppImages.user,
   ];
   final List<String> unselectedIcon = [
     AppImages.home2,
     AppImages.heart_bold,
-    AppImages.comments,
-    AppImages.comment,
+    AppImages.comm,
+    AppImages.group,
     AppImages.user,
   ];
 
