@@ -11,14 +11,6 @@ import '../../../utils/app_images/app_images.dart';
 class ProfileRoleScreen extends StatelessWidget {
   const ProfileRoleScreen({super.key});
 
-  // final List<Widget> role = [];
-  //
-  // void roleSet(){
-  //   setState(() {
-  //
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

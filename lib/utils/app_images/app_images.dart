@@ -7,7 +7,6 @@ class AppImages {
   static const String card_img = "$basePath/OBJECTS.png";
   static const String card_img2 = "$basePath/OBJECTS2.png";
   static const String img = "$basePath/img.jpg";
-  // static const String img1 = "$basePath/img1.png";
   static const String notification = "$basePath/notification.png";
   static const String card = "$basePath/card.png";
   static const String home2 = "$basePath/home2.svg";

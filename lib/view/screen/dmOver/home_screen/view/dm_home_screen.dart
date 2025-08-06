@@ -23,7 +23,6 @@ class DmHomeScreen extends StatelessWidget {
                 colors: [Color(0xFFD0F2D3), Color(0xFF5BCDA4)],
               ),
             ),
-
             child: SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -109,9 +108,16 @@ class DmHomeScreen extends StatelessWidget {
                     CustomTextField(
                       prefixIcon: Icon(Icons.search, color: AppColors.green),
                       hintText: 'Explore events',
+                      readOnly: true,
+                      onTap: (){
+                        Get.toNamed(AppRoutes.eventExploreScreen);
+                      },
                     ),
                     SizedBox(height: 10),
                     CustomTextField(
+                      onTap: (){
+                        Get.toNamed(AppRoutes.fliterEventScreen);
+                      },
                       weight: 182,
                       fieldBorderRadius: 30,
                       readOnly: true,

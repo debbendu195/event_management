@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 
 import '../../view/screen/chat_screen/chat_screen.dart';
 import '../../view/screen/dmOver/home_screen/view/dm_home_screen.dart';
+import '../../view/screen/dmOver/home_screen/view/event_explore_screen.dart';
+import '../../view/screen/dmOver/home_screen/view/fliter_event_screen.dart';
 import '../../view/screen/event_screen/view/invite_screen.dart';
 import '../../view/screen/home_screen/view/home_screen.dart';
 import '../../view/screen/profile_screen/view/settings/change_pass_screen.dart';
@@ -57,6 +59,8 @@ class AppRoutes {
   static const String changePassScreen = "/ChangePassScreen";
   static const String privacyScreen = "/PrivacyScreen";
   static const String dmHomeScreen = "/DmHomeScreen";
+  static const String eventExploreScreen = "/EventExploreScreen";
+  static const String fliterEventScreen = "/FliterEventScreen";
 
 
   static List<GetPage> routes = [
@@ -86,6 +90,8 @@ class AppRoutes {
     GetPage(name: changePassScreen, page: () => ChangePassScreen()),
     GetPage(name: privacyScreen, page: () => PrivacyScreen()),
     GetPage(name: dmHomeScreen, page: () => DmHomeScreen()),
+    GetPage(name: eventExploreScreen, page: () => EventExploreScreen()),
+    GetPage(name: fliterEventScreen, page: () => FliterEventScreen()),
 
 
 
