@@ -41,7 +41,12 @@ class AppImages {
   static const String heart_bold = "$basePath/heart_bold.svg";
   static const String comm = "$basePath/comm.svg";
   static const String img1 = "$basePath/img1.png";
+  static const String img2 = "$basePath/img2.png";
   static const String pic = "$basePath/pic.png";
+  static const String live = "$basePath/live.png";
+  static const String telegram = "$basePath/telegram.png";
+  static const String trafic = "$basePath/trafic.png";
+  static const String product = "$basePath/product.png";
 
 
 

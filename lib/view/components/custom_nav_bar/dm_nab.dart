@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 import '../../../utils/app_colors/app_colors.dart';
 import '../../../utils/app_images/app_images.dart';
-import '../../screen/dmOver/favourite/favoutite_screen.dart';
+import '../../screen/dmOver/favourite/view/favoutite_screen.dart';
 import '../../screen/dmOver/home_screen/view/dm_home_screen.dart';
 import '../../screen/message_screen/view/message_list_screen.dart';
 import '../../screen/profile_screen/view/profile_screen.dart';

@@ -2,6 +2,9 @@
 import 'package:get/get.dart';
 
 import '../../view/screen/chat_screen/chat_screen.dart';
+import '../../view/screen/dmOver/favourite/view/gallery_screen.dart';
+import '../../view/screen/dmOver/favourite/view/italiano_screen.dart';
+import '../../view/screen/dmOver/favourite/view/update_screen.dart';
 import '../../view/screen/dmOver/home_screen/view/dm_home_screen.dart';
 import '../../view/screen/dmOver/home_screen/view/event_explore_screen.dart';
 import '../../view/screen/dmOver/home_screen/view/fliter_event_screen.dart';
@@ -61,6 +64,9 @@ class AppRoutes {
   static const String dmHomeScreen = "/DmHomeScreen";
   static const String eventExploreScreen = "/EventExploreScreen";
   static const String fliterEventScreen = "/FliterEventScreen";
+  static const String italianoScreen = "/ItalianoScreen";
+  static const String galleryScreen = "/GalleryScreen";
+  static const String updateScreen = "/UpdateScreen";
 
 
   static List<GetPage> routes = [
@@ -92,6 +98,9 @@ class AppRoutes {
     GetPage(name: dmHomeScreen, page: () => DmHomeScreen()),
     GetPage(name: eventExploreScreen, page: () => EventExploreScreen()),
     GetPage(name: fliterEventScreen, page: () => FliterEventScreen()),
+    GetPage(name: italianoScreen, page: () => ItalianoScreen()),
+    GetPage(name: galleryScreen, page: () => GalleryScreen()),
+    GetPage(name: updateScreen, page: () => UpdateScreen()),
 
 
 
