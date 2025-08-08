@@ -47,6 +47,11 @@ class AppImages {
   static const String telegram = "$basePath/telegram.png";
   static const String trafic = "$basePath/trafic.png";
   static const String product = "$basePath/product.png";
+  static const String woman = "$basePath/woman.png";
+  static const String wash = "$basePath/wash.png";
+  static const String smoke = "$basePath/smoke.png";
+  static const String food = "$basePath/food.png";
+  static const String rast = "$basePath/rast.png";
 
 
 

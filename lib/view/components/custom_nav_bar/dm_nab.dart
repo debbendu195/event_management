@@ -109,10 +109,11 @@ class _DmNabState extends State<DmNab> {
           Get.to(() => FavoutiteScreen());
           break;
         case 2:
-          Get.to(() => SocialFeed());
+          Get.to(() => MessageListScreen());
+
           break;
         case 3:
-          Get.to(() => MessageListScreen());
+          Get.to(() => SocialFeed());
           break;
         case 4:
           Get.to(() => ProfileScreen());

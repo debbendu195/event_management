@@ -161,7 +161,8 @@ class DmHomeScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 10),
-                        CustomText(text: 'Live Event'),
+                        TextButton(onPressed: (){Get.toNamed(AppRoutes.dmLiveEventScreen);}, child: CustomText(text: 'Live Event', color: AppColors.black,)),
+                        // CustomText(text: 'Live Event'),
                         SizedBox(width: 20),
                         Container(
                           width: 10,
@@ -172,7 +173,8 @@ class DmHomeScreen extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 10),
-                        CustomText(text: 'Live Event'),
+                        TextButton(onPressed: (){}, child: CustomText(text: 'Up Coming Live', color: AppColors.black,),)
+                        // CustomText(text: 'Up Coming Live'),
                       ],
                     ),
                     SizedBox(width: 10),

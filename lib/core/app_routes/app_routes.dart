@@ -6,8 +6,10 @@ import '../../view/screen/dmOver/favourite/view/gallery_screen.dart';
 import '../../view/screen/dmOver/favourite/view/italiano_screen.dart';
 import '../../view/screen/dmOver/favourite/view/update_screen.dart';
 import '../../view/screen/dmOver/home_screen/view/dm_home_screen.dart';
+import '../../view/screen/dmOver/home_screen/view/dm_live_event_screen.dart';
 import '../../view/screen/dmOver/home_screen/view/event_explore_screen.dart';
 import '../../view/screen/dmOver/home_screen/view/fliter_event_screen.dart';
+import '../../view/screen/dmOver/home_screen/view/vanue_facilities_screen.dart';
 import '../../view/screen/event_screen/view/invite_screen.dart';
 import '../../view/screen/home_screen/view/home_screen.dart';
 import '../../view/screen/profile_screen/view/settings/change_pass_screen.dart';
@@ -67,6 +69,8 @@ class AppRoutes {
   static const String italianoScreen = "/ItalianoScreen";
   static const String galleryScreen = "/GalleryScreen";
   static const String updateScreen = "/UpdateScreen";
+  static const String dmLiveEventScreen = "/DmLiveEventScreen";
+  static const String vanueFacilitiesScreen = "/VanueFacilitiesScreen";
 
 
   static List<GetPage> routes = [
@@ -101,6 +105,8 @@ class AppRoutes {
     GetPage(name: italianoScreen, page: () => ItalianoScreen()),
     GetPage(name: galleryScreen, page: () => GalleryScreen()),
     GetPage(name: updateScreen, page: () => UpdateScreen()),
+    GetPage(name: dmLiveEventScreen, page: () => DmLiveEventScreen()),
+    GetPage(name: vanueFacilitiesScreen, page: () => VanueFacilitiesScreen()),
 
 
 

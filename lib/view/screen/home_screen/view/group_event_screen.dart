@@ -28,15 +28,14 @@ class GroupEventScreen extends StatelessWidget {
               ),
             ),
           ),
-          CustomRoyelAppbar(),
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-                vertical: 120,
+                horizontal: 10,
               ),
               child: Column(
                 children: [
+                  CustomRoyelAppbar(),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: Card(
@@ -134,38 +133,12 @@ class GroupEventScreen extends StatelessWidget {
                                   children: [
                                     CustomButton(
                                       onTap: () {
-                                        Get.toNamed(AppRoutes.allEvents);
+                                        Get.toNamed(AppRoutes.vanueFacilitiesScreen);
                                       },
-                                      title: 'All Ages',
+                                      title: 'Venue Facility',
                                       fillColor: AppColors.grey_20,
                                       height: 43,
-                                      width: 80,
-                                      borderRadius: 30,
-                                      fontSize: 12,
-                                      textColor: AppColors.black,
-                                    ),
-                                    SizedBox(width: 10),
-                                    CustomButton(
-                                      onTap: () {
-                                        Get.toNamed(AppRoutes.upcomingScreen);
-                                      },
-                                      title: '18+',
-                                      fillColor: AppColors.grey_20,
-                                      height: 43,
-                                      width: 59,
-                                      borderRadius: 30,
-                                      fontSize: 12,
-                                      textColor: AppColors.black,
-                                    ),
-                                    SizedBox(width: 10),
-                                    CustomButton(
-                                      onTap: () {
-                                        Get.toNamed(AppRoutes.pastScreen);
-                                      },
-                                      title: '21+',
-                                      fillColor: AppColors.grey_20,
-                                      height: 43,
-                                      width: 59,
+                                      width: 110,
                                       borderRadius: 30,
                                       fontSize: 12,
                                       textColor: AppColors.black,

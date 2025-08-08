@@ -153,8 +153,7 @@ class SocialFeed extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Column(
-                        mainAxisAlignment:
-                        MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           CustomText(text: 'Alex Jonson (Host)   Follow'),
                           CustomText(text: '@alexJhon 2h ago'),
@@ -229,8 +228,7 @@ class SocialFeed extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Column(
-                        mainAxisAlignment:
-                        MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           CustomText(text: 'Alex Jonson (Host)   Follow'),
                           CustomText(text: '@alexJhon 2h ago'),
