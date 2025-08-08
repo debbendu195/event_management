@@ -11,6 +11,7 @@ import '../../../../utils/app_images/app_images.dart';
 import '../../../components/custom_button/custom_button.dart';
 import '../../../components/custom_image/custom_image.dart';
 import '../../../components/custom_text/custom_text.dart';
+
 class GroupEventScreen extends StatelessWidget {
   const GroupEventScreen({super.key});
 
@@ -30,9 +31,7 @@ class GroupEventScreen extends StatelessWidget {
           ),
           SingleChildScrollView(
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Column(
                 children: [
                   CustomRoyelAppbar(),
@@ -45,7 +44,12 @@ class GroupEventScreen extends StatelessWidget {
                             borderRadius: BorderRadius.vertical(
                               top: Radius.circular(10.r),
                             ),
-                            child: CustomImage(imageSrc: AppImages.card),
+                            child: CustomImage(
+                              imageSrc: AppImages.card,
+                              fit: BoxFit.cover,
+                              height: 150.h,
+                              width: double.infinity,
+                            ),
                           ),
                           Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -73,19 +77,23 @@ class GroupEventScreen extends StatelessWidget {
                                 Row(
                                   children: [
                                     InkWell(
-                                      onTap: (){},
+                                      onTap: () {},
                                       child: Container(
                                         height: 43,
                                         width: 160,
                                         decoration: BoxDecoration(
                                           color: AppColors.grey_20,
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius: BorderRadius.circular(
+                                            8,
+                                          ),
                                         ),
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            CustomImage(imageSrc: AppImages.join),
+                                            CustomImage(
+                                              imageSrc: AppImages.join,
+                                            ),
                                             SizedBox(width: 5),
                                             CustomText(
                                               text: 'Joined',
@@ -98,7 +106,7 @@ class GroupEventScreen extends StatelessWidget {
                                     ),
                                     SizedBox(width: 5),
                                     InkWell(
-                                      onTap: (){
+                                      onTap: () {
                                         Get.toNamed(AppRoutes.inviteScreen);
                                       },
                                       child: Container(
@@ -106,7 +114,9 @@ class GroupEventScreen extends StatelessWidget {
                                         width: 160,
                                         decoration: BoxDecoration(
                                           color: AppColors.red_03,
-                                          borderRadius: BorderRadius.circular(8),
+                                          borderRadius: BorderRadius.circular(
+                                            8,
+                                          ),
                                         ),
                                         child: Row(
                                           mainAxisAlignment:
@@ -133,7 +143,9 @@ class GroupEventScreen extends StatelessWidget {
                                   children: [
                                     CustomButton(
                                       onTap: () {
-                                        Get.toNamed(AppRoutes.vanueFacilitiesScreen);
+                                        Get.toNamed(
+                                          AppRoutes.vanueFacilitiesScreen,
+                                        );
                                       },
                                       title: 'Venue Facility',
                                       fillColor: AppColors.grey_20,
@@ -155,21 +167,24 @@ class GroupEventScreen extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(width: 20),
+
                                     // CustomFormCard(title: '', controller: TextEditingController()),
-                                    InkWell(
-                                      onTap: () {
-                                        Get.toNamed(AppRoutes.createPostScreen);
-                                      },
-                                      child: Container(
-                                        height: 50,
-                                        width: 200,
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            color: Colors.grey.shade300,
-                                            width: 1,
-                                          ),
-                                          borderRadius: BorderRadius.circular(30),
+                                    Container(
+                                      height: 50,
+                                      width: 200,
+                                      decoration: BoxDecoration(
+                                        border: Border.all(
+                                          color: Colors.grey.shade300,
+                                          width: 1,
                                         ),
+                                        borderRadius: BorderRadius.circular(30),
+                                      ),
+                                      child: InkWell(
+                                        onTap: () {
+                                          Get.toNamed(
+                                            AppRoutes.createPostScreen,
+                                          );
+                                        },
                                         child: CustomTextField(
                                           hintText: 'Write Something...',
                                           readOnly: true,
@@ -178,10 +193,12 @@ class GroupEventScreen extends StatelessWidget {
                                     ),
                                     Spacer(),
                                     InkWell(
-                                      onTap: (){
+                                      onTap: () {
                                         Get.toNamed(AppRoutes.createPostScreen);
                                       },
-                                        child: CustomImage(imageSrc: AppImages.Vector)
+                                      child: CustomImage(
+                                        imageSrc: AppImages.Vector,
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -260,7 +277,7 @@ class GroupEventScreen extends StatelessWidget {
                                     ),
                                   ],
                                 ),
-                                SizedBox(height: 20,),
+                                SizedBox(height: 20),
                                 ClipRRect(
                                   borderRadius: BorderRadius.vertical(
                                     top: Radius.circular(10.r),
@@ -275,7 +292,7 @@ class GroupEventScreen extends StatelessWidget {
                                     SizedBox(width: 10),
                                     CustomText(
                                       text:
-                                      'Summer Music Festival   Central Park',
+                                          'Summer Music Festival   Central Park',
                                       fontSize: 14,
                                       fontWeight: FontWeight.w500,
                                       color: AppColors.green_01,
@@ -284,7 +301,7 @@ class GroupEventScreen extends StatelessWidget {
                                 ),
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
                                       children: [

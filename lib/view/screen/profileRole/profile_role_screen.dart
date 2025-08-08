@@ -51,8 +51,8 @@ class ProfileRoleScreen extends StatelessWidget {
                       Get.toNamed(AppRoutes.homeScreen);
                     },
                     child: Container(
-                      height: 240,
-                      width: 180,
+                      height: 225,
+                      width: 170,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: AppColors.green_01,
@@ -74,7 +74,7 @@ class ProfileRoleScreen extends StatelessWidget {
                           CustomText(
                             text:
                             'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                            color: AppColors.white,
+                            color: AppColors.grey_31,
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             maxLines: 4,
@@ -89,8 +89,8 @@ class ProfileRoleScreen extends StatelessWidget {
                       Get.toNamed(AppRoutes.dmHomeScreen);
                     },
                     child: Container(
-                      height: 240,
-                      width: 180,
+                      height: 225,
+                      width: 170,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: AppColors.lightWhite,

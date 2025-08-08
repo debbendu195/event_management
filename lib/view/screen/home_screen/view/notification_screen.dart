@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:time/utils/app_images/app_images.dart';
 import 'package:time/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 
 import '../../../../utils/app_colors/app_colors.dart';
@@ -23,7 +24,25 @@ class NotificationScreen extends StatelessWidget {
           ),
           Column(
             children: [
-              CustomRoyelAppbar(titleName: 'Notification'),
+              AppBar(
+                backgroundColor: Colors.transparent,
+                automaticallyImplyLeading: false,
+                title: Row(
+                  children: [
+                    Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                        color: AppColors.white,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Icon(Icons.arrow_back_ios),
+                    ),
+                    SizedBox(width: 115),
+                    CustomText(text: 'Notification', fontSize: 16, fontWeight: FontWeight.w700,),
+                  ],
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
@@ -38,10 +57,11 @@ class NotificationScreen extends StatelessWidget {
                       children: [
                         CustomText(
                           text:
-                              'Sunset Cinema announced \n Outdoor Movie Night this Friday',
+                              'Sunset Cinema announced \nOutdoor Movie Night this Friday',
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
                           maxLines: 2,
+                          textAlign: TextAlign.left,
                         ),
                         CustomText(
                           text: 'Event Host',
@@ -81,10 +101,11 @@ class NotificationScreen extends StatelessWidget {
                       children: [
                         CustomText(
                           text:
-                              'Sunset Cinema announced \n Outdoor Movie Night this Friday',
+                              'Sunset Cinema announced \nOutdoor Movie Night this Friday',
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
                           maxLines: 2,
+                          textAlign: TextAlign.left,
                         ),
                         CustomText(
                           text: 'Event Host',
@@ -124,10 +145,11 @@ class NotificationScreen extends StatelessWidget {
                       children: [
                         CustomText(
                           text:
-                              'Sunset Cinema announced \n Outdoor Movie Night this Friday',
+                              'Sunset Cinema announced \nOutdoor Movie Night this Friday',
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
                           maxLines: 2,
+                          textAlign: TextAlign.left,
                         ),
                         CustomText(
                           text: 'Event Host',
@@ -167,10 +189,11 @@ class NotificationScreen extends StatelessWidget {
                       children: [
                         CustomText(
                           text:
-                              'Sunset Cinema announced \n Outdoor Movie Night this Friday',
+                              'Sunset Cinema announced \nOutdoor Movie Night this Friday',
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
                           maxLines: 2,
+                          textAlign: TextAlign.left,
                         ),
                         CustomText(
                           text: 'Event Host',

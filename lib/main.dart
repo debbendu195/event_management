@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:time/utils/app_colors/app_colors.dart';
 import 'core/app_routes/app_routes.dart';
 import 'core/dependency/dependency_injection.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: AppColors.white,
             iconTheme: IconThemeData(color: AppColors.black),
           ),
+          textTheme: GoogleFonts.interTextTheme(),
         ),
         debugShowCheckedModeBanner: false,
         defaultTransition: Transition.fadeIn,

@@ -26,6 +26,7 @@ class CustomRoyelAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      // automaticallyImplyLeading: false,
       toolbarHeight: 80,
       elevation: 0,
       centerTitle: true,
@@ -47,7 +48,7 @@ class CustomRoyelAppbar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ],
       leading: leftIcon == true
-          ? BackButton(color: color ?? AppColors.primaryTitleTextClr)
+          ? Icon(Icons.arrow_back_ios)
           : null,
       title: CustomText(
         text: titleName ?? "",

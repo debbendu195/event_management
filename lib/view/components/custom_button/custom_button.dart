@@ -10,14 +10,17 @@ class CustomButton extends StatelessWidget {
     this.width = double.maxFinite,
     required this.onTap,
     this.title = '',
+    this.icon,
     this.marginVertical = 0,
     this.marginHorizontal = 0,
     this.fillColor = AppColors.primary,
     this.textColor = AppColors.white,
     this.isBorder = false,
     this.fontSize,
+    this.fontWeight,
     this.borderWidth,
     this.borderRadius,
+    this.left,
   });
 
   final double height;
@@ -26,12 +29,15 @@ class CustomButton extends StatelessWidget {
   final Color textColor;
   final VoidCallback onTap;
   final String title;
+  final String? icon;
   final double marginVertical;
   final double marginHorizontal;
   final bool isBorder;
   final double? fontSize;
+  final FontWeight? fontWeight;
   final double? borderWidth;
   final double? borderRadius;
+  final double? left;
 
   @override
   Widget build(BuildContext context) {
@@ -53,9 +59,10 @@ class CustomButton extends StatelessWidget {
         ),
         child: CustomText(
           fontSize: fontSize ?? 18.sp,
-          fontWeight: FontWeight.w500,
+          fontWeight: fontWeight ?? FontWeight.w500,
           color: textColor,
           textAlign: TextAlign.center,
+          left: left ?? 0,
           text: title,
 
         ),

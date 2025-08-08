@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:time/utils/app_images/app_images.dart';
+import 'package:time/view/components/custom_image/custom_image.dart';
 import 'package:time/view/components/custom_text_field/custom_text_field.dart';
 
 import '../../../../../core/app_routes/app_routes.dart';
@@ -178,76 +180,7 @@ class DmHomeScreen extends StatelessWidget {
                       ],
                     ),
                     SizedBox(width: 10),
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
-                      child: Stack(
-                        children: [
-                          Image.asset(
-                            'assets/images/map_dm.png', // your background map image
-                            width: double.infinity,
-                            height: 267,
-                            fit: BoxFit.cover,
-                          ),
-
-                          // Center Green Marker
-                          Positioned(
-                            top: 120,
-                            left: 130,
-                            child: Container(
-                              width: 40,
-                              height: 40,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.green.withOpacity(0.3),
-                              ),
-                              child: Center(
-                                child: Container(
-                                  width: 16,
-                                  height: 16,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.green,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    // Padding(
-                    //   padding: const EdgeInsets.all(16.0),
-                    //   child: Container(
-                    //     height: 80,
-                    //     decoration: BoxDecoration(
-                    //       color: Color(0xFF004D3C), // Dark green background
-                    //       borderRadius: BorderRadius.circular(40),
-                    //     ),
-                    //     child: Row(
-                    //       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    //       children: [
-                    //         // Home - Selected
-                    //         Container(
-                    //           width: 50,
-                    //           height: 50,
-                    //           decoration: BoxDecoration(
-                    //             color: Colors.white,
-                    //             shape: BoxShape.circle,
-                    //           ),
-                    //           child: Icon(Icons.home, color: Colors.black),
-                    //         ),
-                    //         // Favorite
-                    //         Icon(Icons.favorite, color: Colors.grey.shade300, size: 30),
-                    //         // Chat
-                    //         Icon(Icons.chat_bubble_outline, color: Colors.grey.shade300, size: 30),
-                    //         // Globe
-                    //         Icon(Icons.language, color: Colors.grey.shade300, size: 30),
-                    //         // Profile
-                    //         Icon(Icons.person, color: Colors.grey.shade300, size: 30),
-                    //       ],
-                    //     ),
-                    //   ),
-                    // ),
+                    Center(child: CustomImage(imageSrc: AppImages.map_dm, height: 268,))
                   ],
                 ),
               ),

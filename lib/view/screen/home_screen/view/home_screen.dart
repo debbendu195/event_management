@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:time/core/app_routes/app_routes.dart';
+import 'package:time/utils/app_icons/app_icons.dart';
+import 'package:time/utils/app_images/app_images.dart';
 import 'package:time/view/components/custom_button/custom_button.dart';
+import 'package:time/view/components/custom_image/custom_image.dart';
 import 'package:time/view/components/custom_nav_bar/navbar.dart';
 
 import '../../../../utils/app_colors/app_colors.dart';
@@ -13,18 +16,19 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xFFD0F2D3), Color(0xFF5BCDA4)],
+        ),
+      ),
+      child:
+      Scaffold(
+      backgroundColor: Colors.transparent,
       body: Stack(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0xFFD0F2D3), Color(0xFF5BCDA4)],
-              ),
-            ),
-          ),
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 80),
@@ -95,10 +99,13 @@ class HomeScreen extends StatelessWidget {
                         },
                         title: 'Create Event',
                         fillColor: AppColors.green_01,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600,
                         borderRadius: 30,
+                        left: 50
                       ),
                       Positioned(
-                        left: 70,
+                        left: 106,
                         top: 14,
                         child: Container(
                           height: 25,
@@ -146,91 +153,6 @@ class HomeScreen extends StatelessWidget {
                   //     ],
                   //   ),
                   // ),
-                  SizedBox(height: 36.4),
-                  Row(
-                    children: [
-                      Container(
-                        height: 130,
-                        width: 118,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: AppColors.white,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomText(
-                              text: '3',
-                              fontSize: 24,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            SizedBox(height: 10),
-                            CustomText(
-                              text: 'Upcoming Events',
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              maxLines: 2,
-                              color: AppColors.grey_11,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 8),
-                      Container(
-                        height: 130,
-                        width: 118,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: AppColors.white,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomText(
-                              text: '315',
-                              fontSize: 24,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            SizedBox(height: 10),
-                            CustomText(
-                              text: 'Total Attendees',
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.grey_11,
-                              maxLines: 2,
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 8),
-                      Container(
-                        height: 130,
-                        width: 118,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: AppColors.white,
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            CustomText(
-                              text: '5.0',
-                              fontSize: 24,
-                              fontWeight: FontWeight.w600,
-                            ),
-                            SizedBox(height: 10),
-                            CustomText(
-                              text: 'Avg. \n Rating',
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: AppColors.grey_11,
-                              maxLines: 2,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
                   SizedBox(height: 20),
                   InkWell(
                     onTap: () {
@@ -253,7 +175,7 @@ class HomeScreen extends StatelessWidget {
                               height: 150.h,
                               width: double.infinity,
                             ),
-            
+
                             // Bottom content section
                             Padding(
                               padding: EdgeInsets.all(12.w),
@@ -292,15 +214,11 @@ class HomeScreen extends StatelessWidget {
                                     ],
                                   ),
                                   SizedBox(height: 10.h),
-            
+
                                   // Date & Time
                                   Row(
                                     children: [
-                                      Icon(
-                                        Icons.calendar_today_outlined,
-                                        size: 18.r,
-                                        color: AppColors.grey,
-                                      ),
+                                      CustomImage(imageSrc: AppImages.calendar, imageColor: AppColors.grey, height: 20, width: 20,),
                                       SizedBox(width: 6.w),
                                       CustomText(
                                         text: 'Aug 15, 2025 • 4:00PM',
@@ -310,15 +228,11 @@ class HomeScreen extends StatelessWidget {
                                     ],
                                   ),
                                   SizedBox(height: 8.h),
-            
+
                                   // Attendees
                                   Row(
                                     children: [
-                                      Icon(
-                                        Icons.people_outline,
-                                        size: 18.r,
-                                        color: AppColors.grey,
-                                      ),
+                                      CustomImage(imageSrc: AppImages.users, imageColor: AppColors.grey, height: 20, width: 20,),
                                       SizedBox(width: 6.w),
                                       CustomText(
                                         text: '245 attendees',
@@ -335,103 +249,102 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16.r),
-                      ),
-                      clipBehavior: Clip.antiAlias,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            'assets/images/card.png',
-                            fit: BoxFit.cover,
-                            height: 150.h,
-                            width: double.infinity,
-                          ),
-            
-                          // Bottom content section
-                          Padding(
-                            padding: EdgeInsets.all(12.w),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                // Title and Status
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    CustomText(
-                                      text: 'Summer Music Festival',
-                                      fontSize: 16.sp,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    Spacer(),
-                                    Container(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 8.w,
-                                        vertical: 4.h,
+                  InkWell(
+                    onTap: () {
+                      Get.toNamed(AppRoutes.groupEventScreen);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(16.r),
+                        ),
+                        clipBehavior: Clip.antiAlias,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Top image section
+                            Image.asset(
+                              'assets/images/card.png',
+                              fit: BoxFit.cover,
+                              height: 150.h,
+                              width: double.infinity,
+                            ),
+
+                            // Bottom content section
+                            Padding(
+                              padding: EdgeInsets.all(12.w),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  // Title and Status
+                                  Row(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      CustomText(
+                                        text: 'Summer Music Festival',
+                                        fontSize: 16.sp,
+                                        fontWeight: FontWeight.w600,
                                       ),
-                                      decoration: BoxDecoration(
-                                        color: Colors.yellow.shade100,
-                                        borderRadius: BorderRadius.circular(
-                                          12.r,
+                                      Spacer(),
+                                      Container(
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: 8.w,
+                                          vertical: 4.h,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: Colors.yellow.shade100,
+                                          borderRadius: BorderRadius.circular(
+                                            12.r,
+                                          ),
+                                        ),
+                                        child: CustomText(
+                                          text: 'upcoming',
+                                          fontSize: 12.sp,
+                                          color: Colors.black87,
                                         ),
                                       ),
-                                      child: CustomText(
-                                        text: 'upcoming',
-                                        fontSize: 12.sp,
-                                        color: Colors.black87,
+                                    ],
+                                  ),
+                                  SizedBox(height: 10.h),
+
+                                  // Date & Time
+                                  Row(
+                                    children: [
+                                      CustomImage(imageSrc: AppImages.calendar, imageColor: AppColors.grey, height: 20, width: 20,),
+                                      SizedBox(width: 6.w),
+                                      CustomText(
+                                        text: 'Aug 15, 2025 • 4:00PM',
+                                        fontSize: 14.sp,
+                                        color: AppColors.grey,
                                       ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 10.h),
-            
-                                // Date & Time
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.calendar_today_outlined,
-                                      size: 18.r,
-                                      color: AppColors.grey,
-                                    ),
-                                    SizedBox(width: 6.w),
-                                    CustomText(
-                                      text: 'Aug 15, 2025 • 4:00PM',
-                                      fontSize: 14.sp,
-                                      color: AppColors.grey,
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 8.h),
-            
-                                // Attendees
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.people_outline,
-                                      size: 18.r,
-                                      color: AppColors.grey,
-                                    ),
-                                    SizedBox(width: 6.w),
-                                    CustomText(
-                                      text: '245 attendees',
-                                      fontSize: 14.sp,
-                                      color: AppColors.grey,
-                                    ),
-                                  ],
-                                ),
-                              ],
+                                    ],
+                                  ),
+                                  SizedBox(height: 8.h),
+
+                                  // Attendees
+                                  Row(
+                                    children: [
+                                      CustomImage(imageSrc: AppImages.users, imageColor: AppColors.grey, height: 20, width: 20,),
+                                      SizedBox(width: 6.w),
+                                      CustomText(
+                                        text: '245 attendees',
+                                        fontSize: 14.sp,
+                                        color: AppColors.grey,
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
+
                 ],
               ),
             ),
@@ -439,6 +352,7 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: NavBar(currentIndex: 0),
+    )
     );
   }
 }
