@@ -5,11 +5,11 @@ import 'package:get/get.dart';
 
 import '../../../utils/app_colors/app_colors.dart';
 import '../../../utils/app_images/app_images.dart';
-import '../../screen/event_screen/view/all_events.dart';
-import '../../screen/home_screen/view/home_screen.dart';
-import '../../screen/message_screen/view/message_list_screen.dart';
-import '../../screen/profile_screen/view/profile_screen.dart';
-import '../../screen/social_screen/view/social_feed.dart';
+import '../../screen/host/event_screen/view/all_events.dart';
+import '../../screen/host/home_screen/view/home_screen.dart';
+import '../../screen/host/message_screen/view/message_list_screen.dart';
+import '../../screen/host/profile_screen/view/profile_screen.dart';
+import '../../screen/host/social_screen/view/social_feed.dart';
 
 class NavBar extends StatefulWidget {
   final int currentIndex;
@@ -23,14 +23,7 @@ class NavBar extends StatefulWidget {
 class _UserNavBarState extends State<NavBar> {
   late int bottomNavIndex;
 
-  final List<String> selectedIcon = [
-    AppImages.home2,
-    AppImages.calendar,
-    AppImages.group,
-    AppImages.comment,
-    AppImages.user,
-  ];
-  final List<String> unselectedIcon = [
+  final List<String> icons = [
     AppImages.home2,
     AppImages.calendar,
     AppImages.group,
@@ -49,20 +42,20 @@ class _UserNavBarState extends State<NavBar> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.w),
       decoration: BoxDecoration(
-          color: AppColors.green_01,
+        color: AppColors.green_01,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40.r),
           topRight: Radius.circular(40.r),
         ),
-        border: Border.all(color: AppColors.grey_03,width: .2),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withValues(alpha: 0.1),
-            spreadRadius: 1,
-            blurRadius: 0,
-            offset: const Offset(3, 0),
-          ),
-        ]
+        // border: Border.all(color: AppColors.grey_03, width: .2),
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: Colors.grey,
+        //     spreadRadius: 1,
+        //     blurRadius: 0,
+        //     offset: const Offset(3, 0),
+        //   ),
+        // ],
       ),
       height: 85.h,
       width: MediaQuery.of(context).size.width,
@@ -71,21 +64,31 @@ class _UserNavBarState extends State<NavBar> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: List.generate(
-          selectedIcon.length,
+          icons.length,
               (index) => InkWell(
             onTap: () => onTap(index),
+            borderRadius: BorderRadius.circular(20.r),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                SizedBox(height: 13.h,),
+                SizedBox(height: 13.h),
                 Container(
-                  height: 40.h,
-                  width: 40.w,
+                  height: 47.62.h,
+                  width: 47.62.w,
+                  decoration: BoxDecoration(
+                    color: index == bottomNavIndex
+                        ? Colors.white
+                        : Colors.transparent,
+                    shape: BoxShape.circle,
+                  ),
                   alignment: Alignment.center,
                   child: SvgPicture.asset(
-                    index == bottomNavIndex ? selectedIcon[index] : unselectedIcon[index],
-                    height: 24.h,
-                    width: 24.w,
+                    icons[index],
+                    height: 25.h,
+                    width: 25.w,
+                    color: index == bottomNavIndex
+                        ? Colors.black
+                        : Colors.white,
                   ),
                 ),
               ],
@@ -107,21 +110,21 @@ class _UserNavBarState extends State<NavBar> {
           Get.offAll(() => HomeScreen());
           break;
         case 1:
-         Get.to(() => AllEvents());
+          Get.offAll(() => AllEvents());
           break;
         case 2:
-         Get.to(() => SocialFeed());
+          Get.offAll(() => SocialFeed());
           break;
         case 3:
-         Get.to(() => MessageListScreen());
+          Get.offAll(() => MessageListScreen());
           break;
         case 4:
-         Get.to(() => ProfileScreen());
+          Get.to(() => ProfileScreen());
           break;
       }
     }
   }
-}
+  }
 
 
 

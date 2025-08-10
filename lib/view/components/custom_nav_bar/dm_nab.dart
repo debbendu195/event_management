@@ -7,9 +7,9 @@ import '../../../utils/app_colors/app_colors.dart';
 import '../../../utils/app_images/app_images.dart';
 import '../../screen/dmOver/favourite/view/favoutite_screen.dart';
 import '../../screen/dmOver/home_screen/view/dm_home_screen.dart';
-import '../../screen/message_screen/view/message_list_screen.dart';
-import '../../screen/profile_screen/view/profile_screen.dart';
-import '../../screen/social_screen/view/social_feed.dart';
+import '../../screen/host/message_screen/view/message_list_screen.dart';
+import '../../screen/host/profile_screen/view/profile_screen.dart';
+import '../../screen/host/social_screen/view/social_feed.dart';
 
 class DmNab extends StatefulWidget {
   final int currentIndex;
