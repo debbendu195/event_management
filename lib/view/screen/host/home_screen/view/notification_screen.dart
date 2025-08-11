@@ -1,258 +1,60 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:time/view/components/custom_gradient/custom_gradient.dart';
 
 import '../../../../../utils/app_colors/app_colors.dart';
+import '../../../../../utils/app_images/app_images.dart';
 import '../../../../components/custom_text/custom_text.dart';
+import '../widget/notification_card.dart';
 
 class NotificationScreen extends StatelessWidget {
   const NotificationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0xFFD0F2D3), Color(0xFF5BCDA4)],
+    return CustomGradient(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: Scaffold(
+          backgroundColor: Colors.transparent, // lets gradient show
+          appBar: AppBar(
+            automaticallyImplyLeading: false,
+            backgroundColor: Colors.transparent, // transparent for gradient
+            elevation: 0,
+            leading: Container(
+              height: 38.5.h,
+              width: 38.5.h,
+              decoration: BoxDecoration(
+                color: AppColors.white,
+                shape: BoxShape.circle,
               ),
+              child: BackButton(color: AppColors.black),
+            ),
+            title: CustomText(
+              text: "Notification",
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+              textAlign: TextAlign.center,
             ),
           ),
-          Column(
-            children: [
-              AppBar(
-                backgroundColor: Colors.transparent,
-                automaticallyImplyLeading: false,
-                title: Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () => Navigator.pop(context),
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        decoration: BoxDecoration(
-                          color: AppColors.white,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: BackButton(color: AppColors.black,),
-                      ),
-                    ),
-                    SizedBox(width: 115),
-                    CustomText(text: 'Notification', fontSize: 16, fontWeight: FontWeight.w700,),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CircleAvatar(
-                      radius: 30, // Adjust size
-                      backgroundImage: AssetImage('assets/images/img.jpg'),
-                    ),
-                    Flexible(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CustomText(
-                            text:
-                                'Sunset Cinema announced Outdoor Movie Night this Friday',
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                            maxLines: 2,
-                            textAlign: TextAlign.left,
-                            left: 10,
-                            right: 10,
-                          ),
-                          CustomText(
-                            text: 'Event Host',
-                            fontSize: 14,
-                            color: Colors.black,
-                            textAlign: TextAlign.left,
-                            left: 10,
-                            right: 10,
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(width: 5,),
-                    Column(
-                      children: [
-                        CustomText(text: '3h'),
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: AppColors.green_01,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CircleAvatar(
-                      radius: 30, // Adjust size
-                      backgroundImage: AssetImage('assets/images/img.jpg'),
-                    ),
-                    Flexible(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CustomText(
-                            text:
-                                'Sunset Cinema announced Outdoor Movie Night this Friday',
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                            maxLines: 2,
-                            textAlign: TextAlign.left,
-                            left: 10,
-                            right: 10,
-                          ),
-                          CustomText(
-                            text: 'Event Host',
-                            fontSize: 14,
-                            color: Colors.black,
-                            textAlign: TextAlign.left,
-                            left: 10,
-                            right: 10,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Column(
-                      children: [
-                        CustomText(text: '3h'),
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: AppColors.green_01,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CircleAvatar(
-                      radius: 30, // Adjust size
-                      backgroundImage: AssetImage('assets/images/img.jpg'),
-                    ),
-                    Flexible(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CustomText(
-                            text:
-                                'Sunset Cinema announced Outdoor Movie Night this Friday',
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                            maxLines: 2,
-                            textAlign: TextAlign.left,
-                            left: 10,
-                            right: 10,
-                          ),
-                          CustomText(
-                            text: 'Event Host',
-                            fontSize: 14,
-                            color: Colors.black,
-                            textAlign: TextAlign.left,
-                            left: 10,
-                            right: 10,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Column(
-                      children: [
-                        CustomText(text: '3h'),
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: AppColors.green_01,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CircleAvatar(
-                      radius: 30, // Adjust size
-                      backgroundImage: AssetImage('assets/images/img.jpg'),
-                    ),
-                    Flexible(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          CustomText(
-                            text:
-                                'Sunset Cinema announced Outdoor Movie Night this Friday',
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500,
-                            maxLines: 2,
-                            textAlign: TextAlign.left,
-                            left: 10,
-                            right: 10,
-                          ),
-                          CustomText(
-                            text: 'Event Host',
-                            fontSize: 14,
-                            color: Colors.black,
-                            textAlign: TextAlign.left,
-                            left: 10,
-                            right: 10,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Column(
-                      children: [
-                        CustomText(text: '3h'),
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            color: AppColors.green_01,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ],
+          body: Padding(
+            padding: const EdgeInsets.only(top: 30),
+            child: ListView.separated(
+              itemCount: 4,
+              separatorBuilder: (_, __) => const SizedBox(height: 20),
+              itemBuilder: (context, index) {
+                return NotificationCard(
+                  img: AssetImage(AppImages.img),
+                  title:
+                  'Sunset Cinema announced Outdoor Movie Night this Friday ',
+                  subtitle: "Free Entry + Popcorn!",
+                  time: "3h",
+                );
+              },
+            ),
           ),
-        ],
+        ),
       ),
     );
   }
 }
-//You need it

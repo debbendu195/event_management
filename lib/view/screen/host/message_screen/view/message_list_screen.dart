@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:time/utils/app_images/app_images.dart';
 import 'package:time/view/components/custom_nav_bar/navbar.dart';
 import 'package:time/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 
 import '../../../../../core/app_routes/app_routes.dart';
 import '../../../../../utils/app_colors/app_colors.dart';
 import '../../../../components/custom_button/custom_button.dart';
-import '../../../../components/custom_text/custom_text.dart';
+import '../widget/custom_message_list.dart';
 
 class MessageListScreen extends StatelessWidget {
   const MessageListScreen({super.key});
@@ -66,7 +67,7 @@ class MessageListScreen extends StatelessWidget {
                           onTap: () {
                             Get.toNamed(AppRoutes.groupScreen);
                           },
-                          title: 'Group',
+                          title: 'Unread',
                           fillColor: AppColors.white,
                           height: 43,
                           width: 97,
@@ -78,9 +79,24 @@ class MessageListScreen extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: 10),
+                  ListView.separated(
+                    shrinkWrap: true,
+                    itemCount: 4,
+                    separatorBuilder: (context, index) =>
+                        SizedBox(height: 10),
+                    itemBuilder: (context, index) {
+                      return CustomMessageList(
+                        img: AssetImage(AppImages.img),
+                        title: 'Chat with Andrew',
+                        subtitle: 'This is a subtitle for user',
+                        time: '10:00 AM',
+                        icon1: Icon(Icons.done_all, color: Colors.green),
+                        icon2: Icon(Icons.arrow_forward_ios, size: 18),
+                      );
+                    },
+                  ),
 
-                  Card(
+                  /*Card(
                     child: Container(
                       height: 70,
                       width: double.infinity,
@@ -92,19 +108,25 @@ class MessageListScreen extends StatelessWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            CircleAvatar(
-                              radius: 24,
-                              backgroundImage: AssetImage(
-                                'assets/images/img.jpg',
-                              ),
-                            ),
-                            Column(
+                            Row(
                               children: [
-                                CustomText(
-                                  text: 'Chat with Andrew',
-                                  fontWeight: FontWeight.bold,
+                                CircleAvatar(
+                                  radius: 24,
+                                  backgroundImage: AssetImage(
+                                    'assets/images/img.jpg',
+                                  ),
                                 ),
-                                CustomText(text: 'Hey. How are you doing?'),
+                                SizedBox(width: 16,),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    CustomText(
+                                      text: 'Chat with Andrew',
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    CustomText(text: 'Hey. How are you doing?'),
+                                  ],
+                                ),
                               ],
                             ),
                             Column(
@@ -511,7 +533,7 @@ class MessageListScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                  ),
+                  ),*/
                 ],
               ),
             ),
