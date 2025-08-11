@@ -53,6 +53,7 @@ class AppImages {
   static const String food = "$basePath/food.png";
   static const String rast = "$basePath/rast.png";
   static const String map_dm = "$basePath/map_dm.png";
+  static const String star = "$basePath/star.png";
 
 
 

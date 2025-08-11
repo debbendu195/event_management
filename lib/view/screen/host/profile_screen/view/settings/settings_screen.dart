@@ -12,18 +12,19 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [Color(0xFFD0F2D3), Color(0xFF5BCDA4)],
+        ),
+      ),
+      child:
+      Scaffold(
+        backgroundColor: Colors.transparent,
       body: Stack(
         children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0xFFD0F2D3), Color(0xFF5BCDA4)],
-              ),
-            ),
-          ),
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -114,6 +115,7 @@ class SettingsScreen extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: NavBar(currentIndex: 4),
+      )
     );
   }
 }

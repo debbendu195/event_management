@@ -38,6 +38,7 @@ class CustomTextField extends StatefulWidget {
     this.weight = 385,
     this.fontSize = 14,
     this.fontWeight = FontWeight.w400,
+    this.hintColor,
 
   });
 
@@ -55,6 +56,7 @@ class CustomTextField extends StatefulWidget {
   final FormFieldValidator<String>? validator;
   final String? hintText;
   final TextStyle? hintStyle;
+  final Color? hintColor;
   final Color? fillColor;
   final Color? suffixIconColor;
   final Widget? suffixIcon;
@@ -116,7 +118,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               GoogleFonts.inter(
                   fontSize: widget.fontSize,
                   fontWeight: widget.fontWeight,
-                  color: AppColors.titleTextClr),
+                  color: widget.hintColor ?? AppColors.titleTextClr),
           fillColor: widget.fillColor,
           filled: true,
           prefixIcon: widget.prefixIcon,
