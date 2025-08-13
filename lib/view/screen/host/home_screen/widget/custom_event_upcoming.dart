@@ -62,15 +62,6 @@ class CustomEventUpcoming extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4),
-              child: Row(
-                children: [
-                  CustomImage(imageSrc: AppImages.users),
-                  CustomText(text: "Aug 15, 2025 ", fontSize: 14.w,fontWeight: FontWeight.w400,)
-                ],
-              ),
-            ),
           ],
         ),
       ),
