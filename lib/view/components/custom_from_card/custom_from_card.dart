@@ -23,6 +23,7 @@ class CustomFormCard extends StatelessWidget {
   final Color? titleColor;
   final void Function(String)? onChanged;
   final TextInputType? keyboardType;
+  final Color? fillColor;
 
   const CustomFormCard({
     super.key,
@@ -40,7 +41,10 @@ class CustomFormCard extends StatelessWidget {
     this.maxLine,
     this.fontSize,
     this.titleColor,
-    this.prefixIcon, this.keyboardType, this.onChanged,
+    this.prefixIcon,
+    this.keyboardType,
+    this.onChanged,
+    this.fillColor,
   });
 
   @override
@@ -73,7 +77,8 @@ class CustomFormCard extends StatelessWidget {
           isPassword: isPassword,
           textEditingController: controller,
           inputTextStyle: GoogleFonts.inter(color: AppColors.black, fontSize: 18.sp),
-          fillColor: hasBackgroundColor ? AppColors.white : AppColors.white,
+          fillColor: fillColor ?? (hasBackgroundColor ? AppColors.white : Colors.transparent),
+          // fillColor: hasBackgroundColor ? AppColors.white : AppColors.white,
           fieldBorderColor: AppColors.grey.withValues(alpha: .2),
           keyboardType: keyboardType ?? (isPassword ? TextInputType.visiblePassword : TextInputType.text),
           onTap: onTap,

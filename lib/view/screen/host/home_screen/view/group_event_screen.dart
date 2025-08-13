@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:time/view/components/custom_from_card/custom_from_card.dart';
-import 'package:time/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:time/view/components/custom_text_field/custom_text_field.dart';
 
 import '../../../../../core/app_routes/app_routes.dart';
@@ -42,16 +40,13 @@ class GroupEventScreen extends StatelessWidget {
                       title: Row(
                         children: [
                           Container(
-                            height: 40,
-                            width: 40,
+                            height: 38,
+                            width: 38,
                             decoration: BoxDecoration(
                               color: AppColors.white,
                               borderRadius: BorderRadius.circular(30),
                             ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10),
-                              child: Icon(Icons.arrow_back_ios),
-                            ),
+                            child: BackButton(color: AppColors.black),
                           ),
                         ],
                       ),

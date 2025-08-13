@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:time/view/components/custom_nav_bar/navbar.dart';
-import 'package:time/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 
 import '../../../../../../core/app_routes/app_routes.dart';
 import '../../../../../../utils/app_colors/app_colors.dart';
+import '../../../../../../utils/app_images/app_images.dart';
+import '../../../../../components/custom_image/custom_image.dart';
 import '../../../../../components/custom_text/custom_text.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -17,7 +18,7 @@ class SettingsScreen extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          colors: [Color(0xFFD0F2D3), Color(0xFF5BCDA4)],
+          colors: [Color(0xFFD0F2D3), Color(0xFFACDFCD)],
         ),
       ),
       child:
@@ -31,13 +32,46 @@ class SettingsScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  CustomRoyelAppbar(),
+                  GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: AppBar(
+                      backgroundColor: Colors.transparent,
+                      automaticallyImplyLeading: false,
+                      title: Row(
+                        children: [
+                          Container(
+                            height: 40,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              color: AppColors.white,
+                              borderRadius: BorderRadius.circular(30),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Icon(Icons.arrow_back_ios),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   Center(
                     child: Container(
-                      height: 110,
-                      width: 110,
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage('assets/images/img.jpg'),
+                      height: 147,
+                      width: 147,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(
+                          color: AppColors.green_01, // Border color
+                          width: 4, // Border width
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(3.0),
+                        child: CircleAvatar(
+                          radius: 28,
+                          backgroundImage: AssetImage('assets/images/img.jpg'),
+                        ),
                       ),
                     ),
                   ),
@@ -46,15 +80,22 @@ class SettingsScreen extends StatelessWidget {
                     child: CustomText(
                       text: 'Debbendu Paul Oni',
                       fontWeight: FontWeight.w600,
-                      fontSize: 20,
+                      fontSize: 16,
                     ),
                   ),
-                  Center(
-                    child: CustomText(
-                      text: '4.8 Host Rating',
-                      fontSize: 14,
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CustomImage(imageSrc: AppImages.star),
+                      SizedBox(width: 2,),
+                      CustomText(
+                        text: '4.8 Host Rating',
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ],
                   ),
+                  SizedBox(height: 13,),
                   TextButton(onPressed: (){
                     Get.toNamed(AppRoutes.editProfileScreen);
                   },
@@ -107,7 +148,7 @@ class SettingsScreen extends StatelessWidget {
                   TextButton(onPressed: (){}, child: CustomText(text: 'Followers', fontSize: 16, fontWeight: FontWeight.w500,)),
                   TextButton(onPressed: (){}, child: CustomText(text: 'Following', fontSize: 16, fontWeight: FontWeight.w500,)),
                   TextButton(onPressed: (){}, child: CustomText(text: 'Delete Account', fontSize: 16, fontWeight: FontWeight.w500,)),
-                  TextButton(onPressed: (){}, child: CustomText(text: 'Logout', fontSize: 16, fontWeight: FontWeight.w500, color: AppColors.green,)),
+                  TextButton(onPressed: (){}, child: CustomText(text: 'Logout', fontSize: 16, fontWeight: FontWeight.w500, color: AppColors.green_04,)),
                 ],
               ),
             ),

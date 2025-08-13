@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:get/get.dart';
 
-import '../../view/screen/chat_screen/chat_screen.dart';
+import '../../view/screen/chat_screen/view/chat_screen.dart';
 import '../../view/screen/dmOver/favourite/view/gallery_screen.dart';
 import '../../view/screen/dmOver/favourite/view/italiano_screen.dart';
 import '../../view/screen/dmOver/favourite/view/update_screen.dart';
@@ -11,10 +11,10 @@ import '../../view/screen/dmOver/home_screen/view/event_explore_screen.dart';
 import '../../view/screen/dmOver/home_screen/view/fliter_event_screen.dart';
 import '../../view/screen/dmOver/home_screen/view/vanue_facilities_screen.dart';
 import '../../view/screen/host/event_screen/view/all_events.dart';
-import '../../view/screen/host/event_screen/view/create_event_screen.dart';
 import '../../view/screen/host/event_screen/view/invite_screen.dart';
 import '../../view/screen/host/event_screen/view/past_screen.dart';
 import '../../view/screen/host/event_screen/view/upcoming_screen.dart';
+import '../../view/screen/host/home_screen/view/create_event_screen.dart';
 import '../../view/screen/host/home_screen/view/create_post_screen/Create_story_screen.dart';
 import '../../view/screen/host/home_screen/view/create_post_screen/create_post_screen.dart';
 import '../../view/screen/host/home_screen/view/create_post_screen/post_story.dart';

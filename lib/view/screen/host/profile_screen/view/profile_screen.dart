@@ -89,7 +89,7 @@ class ProfileScreen extends StatelessWidget {
                           fontSize: 16,
                         ),
                       ),
-                      Divider(thickness: 2, color: AppColors.green_01,),
+                      Divider(color: AppColors.green_01,),
                       SizedBox(height: 8),
                       Padding(
                         padding: const EdgeInsets.only(
@@ -143,10 +143,10 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 3,),
-                      Divider(thickness: 1, color: AppColors.green_01,),
+                      Divider(color: AppColors.green_01,),
                       eventItem(),
                       SizedBox(height: 3,),
-                      Divider(thickness: 1, color: AppColors.green_01,),
+                      Divider(color: AppColors.green_01,),
                       eventItem(),
                     ],
                   ),
@@ -221,7 +221,7 @@ class ProfileScreen extends StatelessWidget {
             children: [
               CustomImage(
                 imageSrc: AppImages.users,
-                imageColor: AppColors.green_01,
+                imageColor: AppColors.grey,
               ),
               SizedBox(width: 4),
               CustomText(text: '245'),

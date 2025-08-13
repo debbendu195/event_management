@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:time/utils/app_images/app_images.dart';
 
 class CustomGradient extends StatelessWidget {
   final Widget child;
@@ -15,6 +16,18 @@ class CustomGradient extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: double.infinity,
+      width: double.infinity,
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(AppImages.h),
+          fit: BoxFit.cover, // makes it fill entire screen
+        ),
+      ),
+      child: child,
+    );
+
+    /*Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -26,6 +39,6 @@ class CustomGradient extends StatelessWidget {
         ),
       ),
       child: child,
-    );
+    );*/
   }
 }

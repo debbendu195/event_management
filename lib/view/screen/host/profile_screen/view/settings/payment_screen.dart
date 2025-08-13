@@ -40,11 +40,11 @@ class PaymentScreen extends StatelessWidget {
                     CustomText(
                       text: 'Add Payment Setup',
                       fontWeight: FontWeight.w600,
-                      fontSize: 20,
+                      fontSize: 24,
                     ),
                     SizedBox(height: 20,),
                     Container(
-                      height: 300,
+                      height: 252,
                       width: 352,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -52,7 +52,7 @@ class PaymentScreen extends StatelessWidget {
                       ),
                       child: Column(
                         children: [
-                          CustomText(text: 'Choose Payment Platform'),
+                          CustomText(text: 'Choose Payment Platform',textAlign: TextAlign.start,),
                           SizedBox(height: 20,),
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -63,11 +63,13 @@ class PaymentScreen extends StatelessWidget {
                                     Get.toNamed(AppRoutes.stripeScreen);
                                   },
                                   child: Container(
-                                    height: 100,
-                                    width: 160,
+                                    height: 82,
+                                    width: 158,
                                     decoration: BoxDecoration(
-                                      color: AppColors.red,
-                                      borderRadius: BorderRadius.circular(8),
+                                      color: AppColors.white,
+                                      border: Border.all(
+                                        color: AppColors.green_01, // Border width
+                                      ),
                                     ),
                                     child: Column(
                                       mainAxisAlignment: MainAxisAlignment.center,
@@ -77,7 +79,7 @@ class PaymentScreen extends StatelessWidget {
                                           text: 'Stripe',
                                           fontWeight: FontWeight.w400,
                                           fontSize: 14,
-                                          color: AppColors.black_06,
+                                          color: AppColors.black,
                                         ),
                                       ],
                                     ),
@@ -85,11 +87,13 @@ class PaymentScreen extends StatelessWidget {
                                 ),
                                 SizedBox(width: 10,),
                                 Container(
-                                  height: 100,
-                                  width: 160,
+                                  height: 82,
+                                  width: 158,
                                   decoration: BoxDecoration(
-                                    color: AppColors.red,
-                                    borderRadius: BorderRadius.circular(8),
+                                    color: AppColors.white,
+                                    border: Border.all(
+                                      color: AppColors.green_01, // Border width
+                                    ),
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -113,11 +117,13 @@ class PaymentScreen extends StatelessWidget {
                             child: Row(
                               children: [
                                 Container(
-                                  height: 100,
-                                  width: 160,
+                                  height: 82,
+                                  width: 158,
                                   decoration: BoxDecoration(
-                                    color: AppColors.red,
-                                    borderRadius: BorderRadius.circular(8),
+                                    color: AppColors.white,
+                                    border: Border.all(
+                                      color: AppColors.green_01, // Border width
+                                    ),
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -134,11 +140,13 @@ class PaymentScreen extends StatelessWidget {
                                 ),
                                 SizedBox(width: 10,),
                                 Container(
-                                  height: 100,
-                                  width: 160,
+                                  height: 82,
+                                  width: 158,
                                   decoration: BoxDecoration(
-                                    color: AppColors.red,
-                                    borderRadius: BorderRadius.circular(8),
+                                    color: AppColors.white,
+                                    border: Border.all(
+                                      color: AppColors.green_01, // Border width
+                                    ),
                                   ),
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,

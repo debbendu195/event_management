@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:time/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 
-import '../../../utils/app_colors/app_colors.dart';
+import '../../../../utils/app_colors/app_colors.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});

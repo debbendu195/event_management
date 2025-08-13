@@ -16,23 +16,34 @@ class CreateEventScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomRoyelAppbar(titleName: 'Event Create'),
+      appBar: CustomRoyelAppbar(titleName: 'Create Event'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomFormCard(
-                title: 'Event Title',
-                controller: TextEditingController(),
-                hintText: 'Give your event a name',
+              CustomText(
+                text: 'Event Title',
+                fontWeight: FontWeight.w500,
+                fontSize: 16,
               ),
+              SizedBox(height: 10),
+              Container(
+                height: 58,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade300, width: 1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: CustomTextField(hintText: 'Give your name'),
+              ),
+              // SizedBox(height: 29),
               CustomText(
                 text: 'Description',
                 color: AppColors.black,
                 fontWeight: FontWeight.w500,
-                fontSize: 14.w,
+                fontSize: 16.w,
               ),
               SizedBox(height: 10),
               Container(
@@ -288,7 +299,7 @@ class CreateEventScreen extends StatelessWidget {
                         CustomText(text: 'Allow photo/video uploads'),
                       ],
                     ),
-                  Row(
+                    Row(
                       children: [
                         Checkbox(
                           value: true,
@@ -297,7 +308,7 @@ class CreateEventScreen extends StatelessWidget {
                         CustomText(text: 'Allow photo/video uploads'),
                       ],
                     ),
-                  Row(
+                    Row(
                       children: [
                         Checkbox(
                           value: true,
@@ -306,7 +317,7 @@ class CreateEventScreen extends StatelessWidget {
                         CustomText(text: 'Allow photo/video uploads'),
                       ],
                     ),
-                  Row(
+                    Row(
                       children: [
                         Checkbox(
                           value: true,

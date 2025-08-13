@@ -7,9 +7,14 @@ import '../../../../../utils/app_images/app_images.dart';
 import '../../../../components/custom_text/custom_text.dart';
 import '../widget/notification_card.dart';
 
-class NotificationScreen extends StatelessWidget {
+class NotificationScreen extends StatefulWidget {
   const NotificationScreen({super.key});
 
+  @override
+  State<NotificationScreen> createState() => _NotificationScreenState();
+}
+
+class _NotificationScreenState extends State<NotificationScreen> {
   @override
   Widget build(BuildContext context) {
     return CustomGradient(
@@ -22,8 +27,8 @@ class NotificationScreen extends StatelessWidget {
             backgroundColor: Colors.transparent,
             elevation: 0,
             leading: Container(
-              height: 38.5.h,
-              width: 38.5.h,
+              height: 20,
+              width: 20,
               decoration: BoxDecoration(
                 color: AppColors.white,
                 shape: BoxShape.circle,

@@ -4,6 +4,7 @@ class AppImages {
 
   ///====================== SplashScreen =========================
   static const String home = "$basePath/home_screen.svg";
+  static const String h = "$basePath/h.png";
   static const String card_img = "$basePath/OBJECTS.png";
   static const String card_img2 = "$basePath/OBJECTS2.png";
   static const String img = "$basePath/img.jpg";
@@ -11,6 +12,7 @@ class AppImages {
   static const String card = "$basePath/card.png";
   static const String home2 = "$basePath/home2.svg";
   static const String calendar = "$basePath/calendar.svg";
+  static const String date = "$basePath/date.png";
   static const String group = "$basePath/group.svg";
   static const String comment = "$basePath/comment.svg";
   static const String user = "$basePath/user.svg";
@@ -54,6 +56,7 @@ class AppImages {
   static const String rast = "$basePath/rast.png";
   static const String map_dm = "$basePath/map_dm.png";
   static const String star = "$basePath/star.png";
+  static const String pen = "$basePath/pen.png";
 
 
 
