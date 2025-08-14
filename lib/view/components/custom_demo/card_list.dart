@@ -30,7 +30,8 @@ class CardList extends StatelessWidget {
                 ),
                 child: Column(
                   children: List.generate(2, (value) {
-                    return CustomEventUpcoming();
+                    return CustomEventUpcoming()
+                    ;
                   }
                   ),
                 ),

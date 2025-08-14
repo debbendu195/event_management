@@ -165,23 +165,17 @@ class HomeScreen extends StatelessWidget {
                     // ),
                     SizedBox(height: 20),
 
-                    /*  Column(
-                      children: List.generate(5,(index) {
-                        return   CustomEventUpcoming(
-                          calenderIcon: AppIcons.calendar,
-                          title: "jhgvjhjh",
-                          img: "",
-                          personIcon: "",
-                          editIcon: AppIcons.calendar,
-                          subtitle: "",
+                    Column(
+                      children: List.generate(2, (value) {
+                        return CustomEventUpcoming(
+                          img: AppConstants.ntrition1,
+                          title: "Summer Music Festival",
+                          onTap: (){
+                            Get.toNamed(AppRoutes.groupEventScreen);
+                          },
                         );
-                      },),
-                    )*/
-                   Column(
-                     children: List.generate(2, (value) {
-                       return CustomEventUpcoming();
-                     }),
-                   )
+                      }),
+                    ),
                   ],
                 ),
               ),

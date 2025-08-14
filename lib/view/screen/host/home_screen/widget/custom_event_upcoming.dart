@@ -8,61 +8,77 @@ import '../../../../components/custom_netwrok_image/custom_network_image.dart';
 import '../../../../components/custom_text/custom_text.dart';
 
 class CustomEventUpcoming extends StatelessWidget {
-  const CustomEventUpcoming({super.key});
+  const CustomEventUpcoming({
+    super.key,
+    this.title,
+    this.img,
+    this.onTap,
+  });
+
+  final String? title;
+  final String? img;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return  Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
-      child: Container(
-        height: MediaQuery.sizeOf(context).height/2.8,
-        width: MediaQuery.sizeOf(context).width,
-        decoration: BoxDecoration(
-          color: AppColors.white,
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: Column(
-          children: [
-            CustomNetworkImage(
-              imageUrl: AppConstants.ntrition1,
-              height: 200,
-              width: MediaQuery.sizeOf(context).width,
-              borderRadius: BorderRadius.circular(15),
-            ),
-            SizedBox(height: 10.h,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                CustomText(text: "Summer Music Festival", fontSize: 16.w,fontWeight: FontWeight.w500,color: AppColors.black,),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 8),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.amberAccent.withValues(alpha: .2),
-                  ),
-                  child: CustomText(text: "Upcoming", fontSize: 12.w,fontWeight: FontWeight.w400,),
-                )
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4),
-              child: Row(
-                children: [
-                  CustomImage(imageSrc: AppImages.date),
-                  CustomText(text: "Aug 15, 2025 ", fontSize: 14.w,fontWeight: FontWeight.w400,)
-                ],
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          height: MediaQuery.sizeOf(context).height/2.8,
+          width: MediaQuery.sizeOf(context).width,
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Column(
+            children: [
+              CustomNetworkImage(
+                imageUrl: img ?? AppConstants.ntrition1,
+                height: 200,
+                width: MediaQuery.sizeOf(context).width,
+                borderRadius: BorderRadius.circular(15),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4),
-              child: Row(
-                children: [
-                  CustomImage(imageSrc: AppImages.users),
-                  CustomText(text: "Aug 15, 2025 ", fontSize: 14.w,fontWeight: FontWeight.w400,)
-                ],
+              SizedBox(height: 10.h,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
+                child: Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    CustomText(text: title ?? "Summer Music Festival", fontSize: 16.w,fontWeight: FontWeight.w500,color: AppColors.black,),
+                    Spacer(),
+                    Container(
+                      padding: EdgeInsets.symmetric(horizontal: 16.h, vertical: 8),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.amberAccent.withValues(alpha: .2),
+                      ),
+                      child: CustomText(text: "Upcoming", fontSize: 12.w,fontWeight: FontWeight.w400,),
+                    )
+                  ],
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
+                child: Row(
+                  children: [
+                    CustomImage(imageSrc: AppImages.date),
+                    CustomText(text: "Aug 15, 2025 ", fontSize: 14.w,fontWeight: FontWeight.w400,)
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 4),
+                child: Row(
+                  children: [
+                    CustomImage(imageSrc: AppImages.users),
+                    CustomText(text: "Aug 15, 2025 ", fontSize: 14.w,fontWeight: FontWeight.w400,)
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

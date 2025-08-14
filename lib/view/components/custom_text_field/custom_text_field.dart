@@ -39,6 +39,7 @@ class CustomTextField extends StatefulWidget {
     this.fontSize = 14,
     this.fontWeight = FontWeight.w400,
     this.hintColor,
+    this.color,
 
   });
 
@@ -74,6 +75,7 @@ class CustomTextField extends StatefulWidget {
   final double? weight;
   final double? fontSize;
   final FontWeight? fontWeight;
+  final Color? color;
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();
