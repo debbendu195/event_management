@@ -21,6 +21,7 @@ import '../../view/screen/host/home_screen/view/create_post_screen/post_story.da
 import '../../view/screen/host/home_screen/view/group_event_screen.dart';
 import '../../view/screen/host/home_screen/view/home_screen.dart';
 import '../../view/screen/host/home_screen/view/notification_screen.dart';
+import '../../view/screen/host/home_screen/widget/custom_menu_button.dart';
 import '../../view/screen/host/message_screen/view/message_list_screen.dart';
 import '../../view/screen/host/profile_screen/view/profile_screen.dart';
 import '../../view/screen/host/profile_screen/view/settings/change_pass_screen.dart';
@@ -29,6 +30,8 @@ import '../../view/screen/host/profile_screen/view/settings/payment_screen.dart'
 import '../../view/screen/host/profile_screen/view/settings/privacy_screen.dart';
 import '../../view/screen/host/profile_screen/view/settings/settings_screen.dart';
 import '../../view/screen/host/profile_screen/view/settings/stripe_screen.dart';
+import '../../view/screen/host/profile_screen/view/settings/support_screen.dart';
+import '../../view/screen/host/profile_screen/view/settings/terms_condition_screen.dart';
 import '../../view/screen/host/social_screen/view/chatroom_screen.dart';
 import '../../view/screen/host/social_screen/view/group_screen.dart';
 import '../../view/screen/host/social_screen/view/social_feed.dart';
@@ -60,9 +63,10 @@ class AppRoutes {
   static const String editProfileScreen = "/EditProfileScreen";
   static const String paymentScreen = "/PaymentScreen";
   static const String stripeScreen = "/StripeScreen";
-  static const String supportScreen = "/supportScreen";
-  static const String changePassScreen = "/ChangePassScreen";
   static const String privacyScreen = "/PrivacyScreen";
+  static const String termsConditionScreen = "/TermsConditionScreen";
+  static const String changePassScreen = "/ChangePassScreen";
+  static const String supportScreen = "/SupportScreen";
   static const String dmHomeScreen = "/DmHomeScreen";
   static const String eventExploreScreen = "/EventExploreScreen";
   static const String fliterEventScreen = "/FliterEventScreen";
@@ -71,6 +75,7 @@ class AppRoutes {
   static const String updateScreen = "/UpdateScreen";
   static const String dmLiveEventScreen = "/DmLiveEventScreen";
   static const String vanueFacilitiesScreen = "/VanueFacilitiesScreen";
+  // static const String customMenuButton = "/CustomMenuButton";
 
 
   static List<GetPage> routes = [
@@ -97,8 +102,10 @@ class AppRoutes {
     GetPage(name: editProfileScreen, page: () => EditProfileScreen()),
     GetPage(name: paymentScreen, page: () => PaymentScreen()),
     GetPage(name: stripeScreen, page: () => StripeScreen()),
-    GetPage(name: changePassScreen, page: () => ChangePassScreen()),
     GetPage(name: privacyScreen, page: () => PrivacyScreen()),
+    GetPage(name: termsConditionScreen, page: () => TermsConditionScreen()),
+    GetPage(name: changePassScreen, page: () => ChangePassScreen()),
+    GetPage(name: supportScreen, page: () => SupportScreen()),
     GetPage(name: dmHomeScreen, page: () => DmHomeScreen()),
     GetPage(name: eventExploreScreen, page: () => EventExploreScreen()),
     GetPage(name: fliterEventScreen, page: () => FliterEventScreen()),
@@ -107,6 +114,7 @@ class AppRoutes {
     GetPage(name: updateScreen, page: () => UpdateScreen()),
     GetPage(name: dmLiveEventScreen, page: () => DmLiveEventScreen()),
     GetPage(name: vanueFacilitiesScreen, page: () => VanueFacilitiesScreen()),
+    // GetPage(name: customMenuButton, page: () => CustomMenuButton()),
 
 
 

@@ -40,6 +40,8 @@ class AppIcons {
   static const String icon18 = "$basePath/icon18.svg";
   static const String calendar = "$basePath/calendar.svg";
   static const String star = "$basePath/star.svg";
+  static const String downarrow = "$basePath/downarrow.png";
+  static const String uparrow = "$basePath/uparrow.png";
 
 
 

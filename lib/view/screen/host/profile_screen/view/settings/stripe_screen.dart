@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:time/view/components/custom_from_card/custom_from_card.dart';
+import 'package:time/view/components/custom_gradient/custom_gradient.dart';
 
 import '../../../../../../core/app_routes/app_routes.dart';
 import '../../../../../../utils/app_colors/app_colors.dart';
@@ -15,187 +16,202 @@ class StripeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0xFFD0F2D3), Color(0xFF5BCDA4)],
-              ),
-            ),
-          ),
-          Column(
+    return CustomGradient(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomRoyelAppbar(titleName: 'Payment Setup'),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomText(
-                      text: 'Add Payment Setup',
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20,
-                    ),
-                    SizedBox(height: 20),
-                    Container(
-                      height: 300,
-                      width: 352,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: AppColors.white,
+              AppBar(
+                automaticallyImplyLeading: false,
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                leading: Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    color: AppColors.white,
+                    shape: BoxShape.circle,
+                  ),
+                  child: BackButton(color: AppColors.black),
+                ),
+                title: CustomText(
+                  text: "Payment Setup",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w700,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              CustomText(
+                text: 'Add Payment Setup',
+                fontWeight: FontWeight.w600,
+                fontSize: 24,
+              ),
+              SizedBox(height: 20),
+              SizedBox(height: 20),
+              Container(
+                height: 285,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: AppColors.white,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: 'Choose Payment Platform',
+                        textAlign: TextAlign.start,
                       ),
-                      child: Column(
+                      SizedBox(height: 20),
+                      Row(
                         children: [
-                          CustomText(text: 'Choose Payment Platform'),
-                          SizedBox(height: 20),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Row(
-                              children: [
-                                InkWell(
-                                  onTap: () {
-                                    Get.toNamed(AppRoutes.stripeScreen);
-                                  },
-                                  child: Container(
-                                    height: 100,
-                                    width: 160,
-                                    decoration: BoxDecoration(
-                                      color: AppColors.green_02,
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        CustomImage(imageSrc: AppImages.stripe),
-                                        CustomText(
-                                          text: 'Stripe',
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 14,
-                                          color: AppColors.black_06,
-                                        ),
-                                      ],
-                                    ),
-                                  ),
+                          InkWell(
+                            onTap: () {
+                              Get.toNamed(AppRoutes.stripeScreen);
+                            },
+                            child: Container(
+                              height: 82,
+                              width: 158,
+                              decoration: BoxDecoration(
+                                color: AppColors.green_02,
+                                border: Border.all(
+                                  color: AppColors.green_05, // Border width
                                 ),
-                                SizedBox(width: 10),
-                                Container(
-                                  height: 100,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: AppColors.red,
-                                    borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CustomImage(imageSrc: AppImages.stripe),
+                                  CustomText(
+                                    text: 'Stripe',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: AppColors.black,
                                   ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      CustomImage(imageSrc: AppImages.paypal),
-                                      CustomText(
-                                        text: 'PauPal',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                        color: AppColors.black_06,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
-                          SizedBox(height: 20),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 10),
-                            child: Row(
+                          SizedBox(width: 10),
+                          Container(
+                            height: 82,
+                            width: 158,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: AppColors.green_05, // Border width
+                              ),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Container(
-                                  height: 100,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: AppColors.red,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      CustomImage(imageSrc: AppImages.bank),
-                                      CustomText(
-                                        text: 'Bank',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                        color: AppColors.black_06,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                SizedBox(width: 10),
-                                Container(
-                                  height: 100,
-                                  width: 160,
-                                  decoration: BoxDecoration(
-                                    color: AppColors.red,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      CustomImage(imageSrc: AppImages.upi),
-                                      CustomText(
-                                        text: 'UPI',
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                        color: AppColors.black_06,
-                                      ),
-                                    ],
-                                  ),
+                                CustomImage(imageSrc: AppImages.paypal),
+                                CustomText(
+                                  text: 'PauPal',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  color: AppColors.black_06,
                                 ),
                               ],
                             ),
                           ),
                         ],
                       ),
-                    ),
-                    SizedBox(height: 20),
-                    Container(
-                      height: 150,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: AppColors.white,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 10,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CustomText(text: 'Stripe Account Details'),
-                            CustomFormCard(
-                              title: 'Stripe Account ID',
-                              hintText: 'acctXXXXXXXXXX',
-                              controller: TextEditingController(),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Container(
+                            height: 82,
+                            width: 158,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: AppColors.green_05, // Border width
+                              ),
+                              borderRadius: BorderRadius.circular(5),
                             ),
-                          ],
-                        ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CustomImage(imageSrc: AppImages.bank),
+                                CustomText(
+                                  text: 'Bank',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  color: AppColors.black_06,
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Container(
+                            height: 82,
+                            width: 158,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: AppColors.green_05, // Border width
+                              ),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CustomImage(imageSrc: AppImages.upi),
+                                CustomText(
+                                  text: 'UPI',
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 14,
+                                  color: AppColors.black_06,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    SizedBox(height: 20),
-                    CustomButton(
-                      onTap: () {},
-                      title: 'Save & Verity',
-                      fillColor: AppColors.grey_21,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                height: 150,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 10,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(text: 'Stripe Account Details'),
+                      CustomFormCard(
+                        title: 'Stripe Account ID',
+                        hintText: 'acctXXXXXXXXXX',
+                        controller: TextEditingController(),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 20),
+              CustomButton(
+                onTap: () {},
+                title: 'Save & Verity',
+                fillColor: AppColors.grey_21,
               ),
             ],
           ),
-        ],
+        ),
       ),
     );
   }

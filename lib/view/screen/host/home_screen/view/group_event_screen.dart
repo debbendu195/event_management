@@ -9,6 +9,7 @@ import '../../../../../utils/app_colors/app_colors.dart';
 import '../../../../../utils/app_const/app_const.dart';
 import '../../../../../utils/app_images/app_images.dart';
 import '../../../../components/custom_image/custom_image.dart';
+import '../../../../components/custom_netwrok_image/custom_network_image.dart';
 import '../../../../components/custom_text/custom_text.dart';
 import '../widget/custom_event_upcoming.dart';
 import '../widget/custom_live_comment.dart';
@@ -27,7 +28,16 @@ class GroupEventScreen extends StatelessWidget {
             appBar: AppBar(
               automaticallyImplyLeading: false,
               backgroundColor: Colors.transparent,
-              leading: BackButton(color: AppColors.black),
+              elevation: 0,
+              leading: Container(
+                height: 20,
+                width: 20,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  shape: BoxShape.circle,
+                ),
+                child: BackButton(color: AppColors.black),
+              ),
             ),
             body:  SingleChildScrollView(
               child: Column(
@@ -43,11 +53,11 @@ class GroupEventScreen extends StatelessWidget {
                           borderRadius: BorderRadius.vertical(
                             top: Radius.circular(20.r),
                           ),
-                          child: CustomImage(
-                            imageSrc: AppImages.card,
-                            fit: BoxFit.cover,
-                            height: 150.h,
-                            width: double.infinity,
+                          child: CustomNetworkImage(
+                            imageUrl: AppConstants.ntrition1,
+                            height: 200,
+                            width: MediaQuery.sizeOf(context).width,
+                            borderRadius: BorderRadius.circular(15),
                           ),
                         ),
 

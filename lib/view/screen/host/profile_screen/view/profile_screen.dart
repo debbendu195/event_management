@@ -153,17 +153,25 @@ class ProfileScreen extends StatelessWidget {
                 ),
 
                 SizedBox(height: 17),
+                InkWell(
+                  onTap: (){
+                    Get.toNamed(AppRoutes.settingsScreen);
+                  },
+                  child: Container(
+                    height: 40,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: AppColors.white,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: CustomText(text: 'Settings', fontSize: 16, fontWeight: FontWeight.w500, textAlign: TextAlign.start,),
+                    ),
+                  ),
+                ),
 
-                // Settings Box
-                // CustomButton(
-                //   onTap: () {
-                //     Get.toNamed(AppRoutes.settingsScreen);
-                //   },
-                //   title: 'Settings',
-                //   textColor: AppColors.black,
-                //   fillColor: AppColors.white,
-                // ),
-                CustomTextField(
+               /* CustomTextField(
                   onTap: (){
                     Get.toNamed(AppRoutes.settingsScreen);
                   },
@@ -173,7 +181,8 @@ class ProfileScreen extends StatelessWidget {
                   fontSize: 16,
                   fontWeight: FontWeight.w500,
                   readOnly: true,
-                ),
+                ),*/
+
               ],
             ),
           ),

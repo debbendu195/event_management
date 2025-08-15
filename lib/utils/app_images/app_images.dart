@@ -57,6 +57,8 @@ class AppImages {
   static const String map_dm = "$basePath/map_dm.png";
   static const String star = "$basePath/star.png";
   static const String pen = "$basePath/pen.png";
+  static const String downarrow = "$basePath/downarrow.png";
+  static const String uparrow = "$basePath/uparrow.png";
 
 
 

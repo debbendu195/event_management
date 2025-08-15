@@ -105,7 +105,7 @@ class ProfileRoleScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 7),
                           CustomText(
-                            text: 'DMOVER',
+                            text: 'GUESTgi',
                             fontWeight: FontWeight.w600,
                             fontSize: 16,
                           ),

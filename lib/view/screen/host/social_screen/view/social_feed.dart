@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:time/view/components/custom_gradient/custom_gradient.dart';
+import 'package:time/view/screen/host/home_screen/widget/custom_live_details.dart';
 
 import '../../../../../core/app_routes/app_routes.dart';
 import '../../../../../utils/app_colors/app_colors.dart';
@@ -15,7 +17,187 @@ class SocialFeed extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return CustomGradient(
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: SingleChildScrollView(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+            child: Column(
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search',
+                    prefixIcon: Icon(Icons.search),
+                    filled: true,
+                    fillColor: Colors.white,
+                    contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 28,),
+                Row(
+                  children: [
+                    CustomButton(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.socialFeed);
+                      },
+                      title: 'Social Feed',
+                      fillColor: AppColors.green_01,
+                      height: 43,
+                      width: 100,
+                      borderRadius: 30,
+                      fontSize: 12,
+                    ),
+                    SizedBox(width: 5),
+                    CustomButton(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.groupScreen);
+                      },
+                      title: 'Group',
+                      fillColor: AppColors.white,
+                      height: 43,
+                      width: 70,
+                      borderRadius: 30,
+                      fontSize: 12,
+                      textColor: AppColors.black,
+                    ),
+                    SizedBox(width: 5),
+                    CustomButton(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.chatroomScreen);
+                      },
+                      title: 'Chatroom',
+                      fillColor: AppColors.white,
+                      height: 43,
+                      width: 100,
+                      borderRadius: 30,
+                      fontSize: 12,
+                      textColor: AppColors.black,
+                    ),
+                  ],
+                ),
+
+                SizedBox(height: 32,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Stack(
+                          children: [
+                            CircleAvatar(
+                              radius: 30, // Adjust size
+                              backgroundImage: AssetImage(
+                                'assets/images/img.jpg',
+                              ),
+                            ),
+                            Positioned(
+                              top: 40,
+                              left: 40,
+                              child: Container(
+                                height: 20,
+                                width: 20,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  color: AppColors.white,
+                                ),
+                                child: Icon(
+                                  Icons.add,
+                                  size: 15,
+                                  color: AppColors.black,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        CustomText(text: 'Your Story', fontSize: 10),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 30, // Adjust size
+                          backgroundImage: AssetImage(
+                            'assets/images/img.jpg',
+                          ),
+                        ),
+                        CustomText(text: 'Your Story', fontSize: 10),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 30, // Adjust size
+                          backgroundImage: AssetImage(
+                            'assets/images/img.jpg',
+                          ),
+                        ),
+                        CustomText(text: 'Your Story', fontSize: 10),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 30, // Adjust size
+                          backgroundImage: AssetImage(
+                            'assets/images/img.jpg',
+                          ),
+                        ),
+                        CustomText(text: 'Your Story', fontSize: 10),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 30, // Adjust size
+                          backgroundImage: AssetImage(
+                            'assets/images/img.jpg',
+                          ),
+                        ),
+                        CustomText(text: 'Your Story', fontSize: 10),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 32,),
+
+                Column(
+                  children: List.generate(2, (value) {
+                    return Column(
+                      children: [
+                        CustomLiveDetails(),
+                        if(value != 1)
+                          Divider(color: Colors.black, thickness: 1,)
+                      ],
+                    );
+                  }),
+                ),
+
+              ],
+            ),
+          ),
+          floatingActionButton: InkWell(
+            onTap: (){
+              Get.toNamed(AppRoutes.createEventScreen);
+            },
+            child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                color: AppColors.green_01,
+                borderRadius: BorderRadius.circular(30),
+              ),
+              child: Icon(Icons.add, color: AppColors.white),
+            ),
+          ),
+          bottomNavigationBar: NavBar(currentIndex: 2),
+        ),
+    );
+
+    /*Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
@@ -284,6 +466,6 @@ class SocialFeed extends StatelessWidget {
         ),
         bottomNavigationBar: NavBar(currentIndex: 2),
       ),
-    );
+    );*/
   }
 }

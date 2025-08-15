@@ -1,4 +1,3 @@
-import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:time/view/components/custom_gradient/custom_gradient.dart';
@@ -13,7 +12,7 @@ import '../../../../../utils/app_const/app_const.dart';
 import '../../home_screen/widget/custom_home_tabbar.dart';
 
 class AllEvents extends StatefulWidget {
-  AllEvents({super.key});
+  const AllEvents({super.key});
 
   @override
   State<AllEvents> createState() => _AllEventsState();
@@ -72,19 +71,90 @@ class _AllEventsState extends State<AllEvents> {
               ],
             ),
           ),
-          body: Column(
-            children: [
-              Obx(() {
-                return CustomHomeTabBar(
-                  curentIndex: homeController.selectedIndex.value,
-                  onTab: () {},
-                  tabs: ['All', 'Live', 'Upcoming', 'Past'],
-                  onTabChanged: (index) {
-                    homeController.selectedIndex.value = index;
-                  },
-                );
-              }),
-            ],
+          body: Padding(
+            padding: const EdgeInsets.all(12),
+            child: Column(
+              children: [
+                SizedBox(height: 30,),
+                Obx(() {
+                  return CustomHomeTabBar(
+                    curentIndex: homeController.selectedIndex.value,
+                    onTab: () {},
+                    tabs: ['All', 'Live', 'Upcoming', 'Past'],
+                    onTabChanged: (index) {
+                      homeController.selectedIndex.value = index;
+                    },
+                  );
+                }),
+                SizedBox(height: 20,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      height: 118,
+                      width: 107,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomText(text: '3', fontSize: 24, fontWeight: FontWeight.w600,),
+                          CustomText(text: 'Events', fontSize: 16, fontWeight: FontWeight.w400,),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 118,
+                      width: 107,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomText(text: '5.0', fontSize: 24, fontWeight: FontWeight.w600,),
+                          CustomText(text: 'Total \n Attendance', fontSize: 16, fontWeight: FontWeight.w400,),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 118,
+                      width: 107,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomText(text: '5.0', fontSize: 24, fontWeight: FontWeight.w600,),
+                          CustomText(text: 'Ratings', fontSize: 16, fontWeight: FontWeight.w400,),
+                        ],
+                      ),
+                    ),
+
+                  ],
+                ),
+                SizedBox(height: 25,),
+                Column(
+                  children: List.generate(1, (value) {
+                    return CustomEventUpcoming(
+                      img: AppConstants.ntrition1,
+                      title: "Summer Music Festival",
+                      onTap: (){
+                        Get.toNamed(AppRoutes.groupEventScreen);
+                      },
+                    );
+                  }),
+                ),
+              ],
+            ),
           ),
           bottomNavigationBar: NavBar(currentIndex: 1),
         ),

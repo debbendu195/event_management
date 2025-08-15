@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:time/core/app_routes/app_routes.dart';
 import 'package:time/view/components/custom_button/custom_button.dart';
 import 'package:time/view/components/custom_from_card/custom_from_card.dart';
 import 'package:time/view/components/custom_image/custom_image.dart';
-import 'package:time/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 import 'package:time/view/components/custom_text/custom_text.dart';
 import 'package:time/view/components/custom_text_field/custom_text_field.dart';
+import 'package:time/view/screen/host/home_screen/widget/custom_facility_card.dart';
+import 'package:time/view/screen/host/home_screen/widget/custom_menu_button.dart';
 
 import '../../../../../utils/app_colors/app_colors.dart';
 import '../../../../../utils/app_images/app_images.dart';
@@ -16,13 +19,32 @@ class CreateEventScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomRoyelAppbar(titleName: 'Create Event'),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              AppBar(
+                automaticallyImplyLeading: false,
+                backgroundColor: Colors.transparent,
+                elevation: 0,
+                leading: Container(
+                  height: 20,
+                  width: 20,
+                  decoration: BoxDecoration(
+                    color: AppColors.grey_13,
+                    shape: BoxShape.circle,
+                  ),
+                  child: BackButton(color: AppColors.black),
+                ),
+                title: CustomText(
+                  text: "Create Event",
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                  textAlign: TextAlign.center,
+                ),
+              ),
               CustomText(
                 text: 'Event Title',
                 fontWeight: FontWeight.w500,
@@ -34,11 +56,11 @@ class CreateEventScreen extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey.shade300, width: 1),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: CustomTextField(hintText: 'Give your name'),
               ),
-              // SizedBox(height: 29),
+              SizedBox(height: 29),
               CustomText(
                 text: 'Description',
                 color: AppColors.black,
@@ -51,7 +73,7 @@ class CreateEventScreen extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey.shade300, width: 1),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: CustomTextField(hintText: 'Describe Your Event'),
               ),
@@ -60,7 +82,7 @@ class CreateEventScreen extends StatelessWidget {
                 text: 'Upload Cover Image',
                 color: AppColors.black,
                 fontWeight: FontWeight.w500,
-                fontSize: 14.w,
+                fontSize: 16.w,
               ),
               SizedBox(height: 10),
               Container(
@@ -68,7 +90,7 @@ class CreateEventScreen extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey.shade300, width: 1),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -83,23 +105,65 @@ class CreateEventScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 18),
+              SizedBox(height: 28),
+              CustomText(
+                text: 'Date',
+                color: AppColors.black,
+                fontWeight: FontWeight.w500,
+                fontSize: 16.w,
+              ),
+              Container(
+                height: 58,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade300, width: 1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomText(text: 'mm/dd/yyyy'),
+                      CustomImage(imageSrc: AppImages.calendar, imageColor: AppColors.green_01,),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CustomText(
+                    text: 'Start Time',
+                    color: AppColors.black,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.w,
+                  ),
+                  CustomText(
+                    text: 'End Time',
+                    color: AppColors.black,
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16.w,
+                  ),
+                ],
+              ),
               Row(
                 children: [
                   Container(
                     height: 58,
-                    width: 175,
+                    width: 186,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300, width: 1),
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          CustomText(text: 'mm/dd/yyyy'),
-                          CustomImage(imageSrc: AppImages.calendar),
+                          CustomText(text: 'Clock'),
+                          CustomImage(imageSrc: AppImages.clock),
                         ],
                       ),
                     ),
@@ -107,10 +171,10 @@ class CreateEventScreen extends StatelessWidget {
                   SizedBox(width: 20),
                   Container(
                     height: 58,
-                    width: 175,
+                    width: 186,
                     decoration: BoxDecoration(
                       border: Border.all(color: Colors.grey.shade300, width: 1),
-                      borderRadius: BorderRadius.circular(8),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -125,68 +189,107 @@ class CreateEventScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
-              CustomText(text: 'End Time', color: AppColors.black,
+
+             /* SizedBox(height: 10),
+              CustomText(text: 'Event Type', color: AppColors.black,
                 fontWeight: FontWeight.w500,
-                fontSize: 14.w,),
+                fontSize: 16.w,),
+              SizedBox(height: 10),
               Container(
-                height: 50,
+                height: 75,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey.shade300, width: 1),
-                  borderRadius: BorderRadius.circular(8),
+                  color: AppColors.white_10,
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                child: CustomImage(imageSrc: AppImages.clock),
-              ),
-              SizedBox(height: 10),
-              CustomText(text: 'Location',color: AppColors.black,
-                fontWeight: FontWeight.w500,
-                fontSize: 14.w,),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomMenuButton(
+                        items: ['Event 1', 'Event 2', 'Event 3', 'Event 4'],
+                        hint: 'Choose Event Type Event',
+                      ),
+                    ],
+                  ),
+                ),
+              ),*/
+
+              SizedBox(height: 20,),
+              CustomText(text: 'Venue Facilities', fontWeight: FontWeight.w500, fontSize: 16,),
               Container(
-                height: 58,
+                height: 75,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey.shade300, width: 1),
-                  borderRadius: BorderRadius.circular(8),
+                  color: AppColors.white_10,
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
-                      CustomImage(imageSrc: AppImages.map),
-                      CustomText(text: 'Enter Location'),
+                      CustomMenuButton(
+                        items: ['Event 1', 'Event 2', 'Event 3', 'Event 4'],
+                        hint: '+ Add a Venue Facility',
+                      ),
                     ],
                   ),
                 ),
               ),
-              SizedBox(height: 15),
-              CustomText(text: 'Event Type', color: AppColors.black,
-                fontWeight: FontWeight.w500,
-                fontSize: 14.w,),
-              SizedBox(height: 10),
+              SizedBox(height: 20,),
+              CustomText(text: 'Event Category', fontWeight: FontWeight.w500, fontSize: 16,),
+              SizedBox(height: 10,),
               Container(
-                height: 50,
+                height: 75,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: AppColors.grey_12,
-                  borderRadius: BorderRadius.circular(8),
+                  color: AppColors.white_10,
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('data',),
-                    Text('data',),
-                    Text('data',),
-                  ],
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomMenuButton(
+                        items: ['Parties', 'Food Festivals', 'Neighborhood Event', 'Family-Friendly', 'Sports', 'Concerts', 'Custom'],
+                        hint: 'Choose Event Category',
+                      ),
+                    ],
+                  ),
                 ),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: 20,),
+              CustomText(text: 'Event Features', fontWeight: FontWeight.w500, fontSize: 16,),
+              SizedBox(height: 10,),
+              Container(
+                height: 75,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: AppColors.white_10,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomMenuButton(
+                        items: ['Pet Friendly', 'ASL Interpreter', 'wheelchair accessible', 'Indoor', 'Outdoor'],
+                        hint: 'Choose Event Features',
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 20,),
               Container(
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: AppColors.grey_12,
-                  borderRadius: BorderRadius.circular(8),
+                  color: AppColors.white_10,
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child:  Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -213,15 +316,20 @@ class CreateEventScreen extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey.shade300, width: 1),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      CustomFormCard(title: 'Age Filter', controller: TextEditingController(), hintText: 'No Age Restriction',),
-                      CustomFormCard(title: 'Max Capacity', controller: TextEditingController(), hintText: 'No Age Restriction',),
+                      CustomText(text: 'Age Filter', fontSize: 12, fontWeight: FontWeight.w500, textAlign: TextAlign.start,),
+                      CustomMenuButton(
+                            items: ['18+', '21+'],
+                            hint: 'Choose Event Category',
+                          ),
+                      SizedBox(height: 20,),
+                      CustomFormCard(title: 'Max Capacity', fontSize: 12, controller: TextEditingController(), hintText: 'No Age Restriction',),
                       CustomText(text: 'Visibility'),
                       Row(
                         children: [
@@ -236,15 +344,15 @@ class CreateEventScreen extends StatelessWidget {
                         width: double.infinity,
                         decoration: BoxDecoration(
                           border: Border.all(color: Colors.grey.shade300, width: 1),
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(12),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              CustomText(text: 'mm/dd/yyyy'),
-                              CustomImage(imageSrc: AppImages.calendar),
+                              CustomText(text: 'mm/dd/yyyy', color: AppColors.black,),
+                              CustomImage(imageSrc: AppImages.date, imageColor: AppColors.black,),
                             ],
                           ),
                         ),
@@ -254,88 +362,14 @@ class CreateEventScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 30),
-              Container(
-                height: 50,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: AppColors.grey_12,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child:  Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          CustomImage(imageSrc: AppImages.gellary),
-                          SizedBox(width: 10,),
-                          CustomText(text: 'Media & Social', color: AppColors.black,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14.w,),
-                        ],
-                      ),
-                      CustomImage(imageSrc: AppImages.frame),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(height: 20),
-              Container(
-                height: 200,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey.shade300, width: 1),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: true,
-                          onChanged: (value) {},
-                        ),
-                        CustomText(text: 'Allow photo/video uploads'),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: true,
-                          onChanged: (value) {},
-                        ),
-                        CustomText(text: 'Allow photo/video uploads'),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: true,
-                          onChanged: (value) {},
-                        ),
-                        CustomText(text: 'Allow photo/video uploads'),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Checkbox(
-                          value: true,
-                          onChanged: (value) {},
-                        ),
-                        CustomText(text: 'Allow photo/video uploads'),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
+              CustomFacilityCard(preicon: CustomImage(imageSrc: AppImages.gellary), title: 'Media & Social',),
               SizedBox(height: 30),
               Container(
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: AppColors.grey_12,
-                  borderRadius: BorderRadius.circular(8),
+                  color: AppColors.white_10,
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child:  Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -346,9 +380,9 @@ class CreateEventScreen extends StatelessWidget {
                         children: [
                           CustomImage(imageSrc: AppImages.bell),
                           SizedBox(width: 10,),
-                          CustomText(text: 'Interactivity', color: AppColors.black,
+                          CustomText(text: 'Notification', color: AppColors.black,
                             fontWeight: FontWeight.w500,
-                            fontSize: 14.w,),
+                            fontSize: 16.w,),
                         ],
                       ),
                       CustomImage(imageSrc: AppImages.frame),
@@ -362,7 +396,7 @@ class CreateEventScreen extends StatelessWidget {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey.shade300, width: 1),
-                  borderRadius: BorderRadius.circular(8),
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
                   children: [
@@ -410,8 +444,8 @@ class CreateEventScreen extends StatelessWidget {
                 height: 50,
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: AppColors.grey_12,
-                  borderRadius: BorderRadius.circular(8),
+                  color: AppColors.white_10,
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child:  Padding(
                   padding: const EdgeInsets.all(10.0),
@@ -422,9 +456,9 @@ class CreateEventScreen extends StatelessWidget {
                         children: [
                           CustomImage(imageSrc: AppImages.ticket),
                           SizedBox(width: 10,),
-                          CustomText(text: 'Interactivity', color: AppColors.black,
+                          CustomText(text: 'Ticketing', color: AppColors.black,
                             fontWeight: FontWeight.w500,
-                            fontSize: 14.w,),
+                            fontSize: 16.w,),
                         ],
                       ),
                       CustomImage(imageSrc: AppImages.frame),
@@ -434,7 +468,7 @@ class CreateEventScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               Container(
-                height: 120,
+                height: 150,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey.shade300, width: 1),
@@ -462,13 +496,107 @@ class CreateEventScreen extends StatelessWidget {
                           CustomText(text: 'Allow photo/video uploads'),
                         ],
                       ),
+                      Center(
+                        child: Container(
+                          height: 35,
+                          width: 311,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey.shade300, width: 1),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Center(child: CustomText(text: '\$ price', textAlign: TextAlign.start,)),
+                        ),
+                      )
                     ],
                   ),
                 ),
               ),
               SizedBox(height: 20,),
-              CustomButton(onTap: (){}, title: 'Publish Now', fillColor: AppColors.green_01, borderRadius: 30,),
+              Container(
+                height: 190,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey.shade300, width: 1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(text: 'Discount'),
+                      Row(
+                        children: [
+                          Container(
+                            height: 58,
+                            width: 175,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey.shade300, width: 1),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(17.0),
+                              child: CustomText(text: 'Clock', textAlign: TextAlign.start,),
+                            ),
+                          ),
+                          SizedBox(width: 20),
+                          Container(
+                            height: 58,
+                            width: 175,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey.shade300, width: 1),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(17.0),
+                              child: CustomText(text: 'Clock', textAlign: TextAlign.start,),
+                            ),
+                          ),
+                        ],
+                      ),
+                      CustomText(text: 'Discount'),
+                      Row(
+                        children: [
+                          Container(
+                            height: 58,
+                            width: 175,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey.shade300, width: 1),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(17.0),
+                              child: CustomText(text: 'Clock', textAlign: TextAlign.start,),
+                            ),
+                          ),
+                          SizedBox(width: 20),
+                          Container(
+                            height: 58,
+                            width: 175,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey.shade300, width: 1),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(17.0),
+                              child: CustomText(text: 'Clock', textAlign: TextAlign.start,),
+                            ),
+                          ),
+                        ],
+                      ),
+
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(height: 60,),
+              CustomButton(onTap: (){}, title: 'Show time', fontSize: 16, fontWeight: FontWeight.w600, fillColor: AppColors.green_01, borderRadius: 30,),
               SizedBox(height: 30,),
+
+
+
+
+
             ],
           ),
         ),

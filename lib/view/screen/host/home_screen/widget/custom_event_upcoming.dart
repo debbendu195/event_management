@@ -26,7 +26,7 @@ class CustomEventUpcoming extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          height: MediaQuery.sizeOf(context).height/2.8,
+          height: MediaQuery.sizeOf(context).height/2.7,
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
             color: AppColors.white,
