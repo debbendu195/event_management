@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:time/core/app_routes/app_routes.dart';
+import 'package:intl/intl.dart';
 import 'package:time/view/components/custom_button/custom_button.dart';
 import 'package:time/view/components/custom_from_card/custom_from_card.dart';
 import 'package:time/view/components/custom_image/custom_image.dart';
@@ -13,8 +12,46 @@ import 'package:time/view/screen/host/home_screen/widget/custom_menu_button.dart
 import '../../../../../utils/app_colors/app_colors.dart';
 import '../../../../../utils/app_images/app_images.dart';
 
-class CreateEventScreen extends StatelessWidget {
-  const CreateEventScreen({super.key});
+DateTime now = DateTime.now();
+
+// Create a DateFormat instance
+DateFormat formatter = DateFormat('yyyy-MM-dd');
+
+//Date method
+
+
+class CreateEventScreen extends StatefulWidget {
+  const CreateEventScreen({super.key, this.date});
+
+  final DateTime? date;
+
+  String get fmattedDate{
+    return formatter.format(date!);
+  }
+
+  @override
+  State<CreateEventScreen> createState() => _CreateEventScreenState();
+
+}
+
+class _CreateEventScreenState extends State<CreateEventScreen> {
+
+  DateTime? _selectedDate;
+
+  void _presentDatePicker() async {
+    final now = DateTime.now();
+    final firstDate = DateTime(now.year - 1, now.month, now.day);
+
+    final pickedDate = await showDatePicker(
+        context: context,
+        initialDate: now,
+        firstDate: firstDate,
+        lastDate: now);
+
+    setState(() {
+      _selectedDate = pickedDate;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -124,8 +161,13 @@ class CreateEventScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomText(text: 'mm/dd/yyyy'),
-                      CustomImage(imageSrc: AppImages.calendar, imageColor: AppColors.green_01,),
+                      CustomText(text: _selectedDate == null
+                          ? 'No Selected Date'
+                          : formatter.format(_selectedDate!)),
+                      IconButton(
+                          onPressed: _presentDatePicker,
+                          icon: const Icon(Icons.calendar_month, color: AppColors.green_01,),
+                      )
                     ],
                   ),
                 ),

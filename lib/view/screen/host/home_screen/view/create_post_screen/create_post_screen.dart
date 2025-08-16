@@ -9,6 +9,7 @@ import '../../../../../../utils/app_colors/app_colors.dart';
 import '../../../../../../utils/app_images/app_images.dart';
 import '../../../../../components/custom_image/custom_image.dart';
 import '../../../../../components/custom_text/custom_text.dart';
+import '../../../../../components/custom_text_field/custom_text_field.dart';
 
 class CreatePostScreen extends StatelessWidget {
   const CreatePostScreen({super.key});
@@ -18,118 +19,121 @@ class CreatePostScreen extends StatelessWidget {
     return CustomGradient(
       child: Scaffold(
         backgroundColor: Colors.transparent,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              AppBar(
-                automaticallyImplyLeading: false,
-                backgroundColor: Colors.transparent,
-                elevation: 0,
-                leading: Container(
-                  height: 20,
-                  width: 20,
-                  decoration: BoxDecoration(
-                    color: AppColors.white,
-                    shape: BoxShape.circle,
-                  ),
-                  child: BackButton(color: AppColors.black),
-                ),
-                title: CustomText(
-                  text: "Create a Post",
-                  fontSize: 16,
-                  fontWeight: FontWeight.w700,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              SizedBox(height: 10),
-              Container(
-                height: 300,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: AppColors.green_06,
-                  border: Border.all(
-                    color: AppColors.green_07,
-
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomImage(imageSrc: AppImages.upload),
-                    CustomText(
-                      text: 'Upload a photo or video',
-                      fontWeight: FontWeight.w400,
-                      fontSize: 16,
-                      color: AppColors.black_06,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                AppBar(
+                  automaticallyImplyLeading: false,
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                  leading: Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      color: AppColors.white,
+                      shape: BoxShape.circle,
                     ),
-                  ],
-                ),
-              ),
-              SizedBox(height: 20),
-              CustomText(text: 'Caption', fontSize: 16, fontWeight: FontWeight.w400,),
-              SizedBox(height: 10),
-              Container(
-                height: 150,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: AppColors.green_06,
-                  border: Border.all(
-                    color: AppColors.green_07,
+                    child: BackButton(color: AppColors.black),
                   ),
-                  borderRadius: BorderRadius.circular(15),
+                  title: CustomText(
+                    text: "Create a Post",
+                    fontSize: 16,
+                    fontWeight: FontWeight.w700,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CustomText(text: 'Write a caption', textAlign: TextAlign.start, fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.grey,),
-                ),
-              ),
-              SizedBox(height: 10),
-              CustomText(text: 'Tag People (Optimal)', fontSize: 16, fontWeight: FontWeight.w400,),
-              Column(
-                children: [
-                  Row(
+                SizedBox(height: 10),
+                Container(
+                  height: 300,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: AppColors.green_06,
+                    border: Border.all(
+                      color: AppColors.green_07,
+          
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      OutlinedButton(
-                        onPressed: () {},
-                        child: Row(
-                          children: [
-                            CustomText(text: 'Jane Cooper', fontSize: 14),
-                            Icon(Icons.clear),
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 10),
-                      OutlinedButton(
-                        onPressed: () {},
-                        child: Row(
-                          children: [
-                            CustomText(text: 'Jane Cooper', fontSize: 14),
-                            Icon(Icons.clear),
-                          ],
-                        ),
+                      CustomImage(imageSrc: AppImages.upload),
+                      CustomText(
+                        text: 'Upload a photo or video',
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                        color: AppColors.black_06,
                       ),
                     ],
                   ),
-                ],
-              ),
-              CustomFormCard(
-                title: '',
-                controller: TextEditingController(),
-                hintText: 'Enter a name',
-              ),
-              SizedBox(height: 10),
-              CustomButton(
-                onTap: () {
-                  Get.toNamed(AppRoutes.createStoryScreen);
-                },
-                title: 'Post',
-                fontSize: 16,
-                fillColor: AppColors.green_01,
-              ),
-            ],
+                ),
+                SizedBox(height: 20),
+                CustomText(text: 'Caption', fontSize: 16, fontWeight: FontWeight.w400,),
+                SizedBox(height: 10),
+                Container(
+                  height: 150,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: AppColors.green_06,
+                    border: Border.all(
+                      color: AppColors.green_07,
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CustomTextField(fillColor: AppColors.green_06, hintText: 'write a caption',),
+                    // CustomText(text: 'Write a caption', textAlign: TextAlign.start, fontSize: 16, fontWeight: FontWeight.w400, color: AppColors.grey,),
+                  ),
+                ),
+                SizedBox(height: 10),
+                CustomText(text: 'Tag People (Optimal)', fontSize: 16, fontWeight: FontWeight.w400,),
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        OutlinedButton(
+                          onPressed: () {},
+                          child: Row(
+                            children: [
+                              CustomText(text: 'Jane Cooper', fontSize: 14),
+                              Icon(Icons.clear),
+                            ],
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        OutlinedButton(
+                          onPressed: () {},
+                          child: Row(
+                            children: [
+                              CustomText(text: 'Jane Cooper', fontSize: 14),
+                              Icon(Icons.clear),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                CustomFormCard(
+                  title: '',
+                  controller: TextEditingController(),
+                  hintText: 'Enter a name',
+                ),
+                SizedBox(height: 10),
+                CustomButton(
+                  onTap: () {
+                    Get.toNamed(AppRoutes.createStoryScreen);
+                  },
+                  title: 'Post',
+                  fontSize: 16,
+                  fillColor: AppColors.green_01,
+                ),
+              ],
+            ),
           ),
         ),
       ),
