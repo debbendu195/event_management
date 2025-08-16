@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:time/utils/app_images/app_images.dart';
+import 'package:time/view/components/custom_gradient/custom_gradient.dart';
+import 'package:time/view/components/custom_image/custom_image.dart';
+import 'package:time/view/screen/dmOver/favourite/widget/custom_gallery_card.dart';
 
 import '../../../../../utils/app_colors/app_colors.dart';
 import '../../../../components/custom_button/custom_button.dart';
@@ -11,238 +15,131 @@ class GalleryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
+    return CustomGradient(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          leading: Container(
+            height: 20,
+            width: 20,
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0xFFD0F2D3), Color(0xFF5BCDA4)],
-              ),
+              color: AppColors.white,
+              shape: BoxShape.circle,
             ),
+            child: BackButton(color: AppColors.black),
           ),
-          SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(12),
+          title: CustomText(
+            text: "Gallery",
+            fontSize: 16,
+            fontWeight: FontWeight.w700,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 50, bottom: 25, left: 20, right: 20),
+            child: Container(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 42),
+              decoration: BoxDecoration(
+                color: AppColors.white,
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: Column(
                 children: [
-                  CustomRoyelAppbar(titleName: 'Gallery'),
-                  CustomButton(
-                    title: "Upload Photos / Videos",
-                    height: 45.h,
-                    width: double.infinity,
-                    textColor: Colors.white, onTap: () {  },
+                  CustomText(text: 'Share Your Event \n Experience', fontWeight: FontWeight.w700, fontSize: 24,),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 28),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 0, vertical: 20),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(53),
+                        color: AppColors.green_01
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          CustomImage(imageSrc: AppImages.frame),
+                          CustomText(text: 'Upload Photos / Videos', fontSize: 16, fontWeight: FontWeight.w500, color: AppColors.white,)
+                        ],
+                      ),
+                    ),
                   ),
                   SizedBox(height: 20.h),
-                  Row(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        height: 50,
-                        width: 90,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: AppColors.green_01,
-                        ),
-                        child: Center(child: CustomText(text: 'All', fontSize: 16, fontWeight: FontWeight.w500, color: AppColors.white,)),
+                      CustomText(text: 'Category', fontSize: 16, fontWeight: FontWeight.w500,),
+                      SizedBox(height: 20.h),
+                      Row(
+                        children: [
+                          Container(
+                            height: 50,
+                            width: 90,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: AppColors.green_01,
+                            ),
+                            child: Center(
+                              child: CustomText(
+                                text: 'All',
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                                color: AppColors.white,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Container(
+                            height: 50,
+                            width: 90,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: AppColors.white,
+                            ),
+                            child: Center(
+                              child: CustomText(
+                                text: 'Photo',
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Container(
+                            height: 50,
+                            width: 100,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: AppColors.white,
+                            ),
+                            child: Center(
+                              child: CustomText(
+                                text: 'Videos',
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                      SizedBox(width: 10,),
-                      Container(
-                        height: 50,
-                        width: 90,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: AppColors.white,
-                        ),
-                        child: Center(child: CustomText(text: 'Photo', fontSize: 16, fontWeight: FontWeight.w500,)),
+                      SizedBox(height: 20.h),
+
+                      Column(
+                        children: List.generate(2, (value) {
+                          return CustomGalleryCard();
+                        }),
                       ),
-                      SizedBox(width: 10,),
-                      Container(
-                        height: 50,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(30),
-                          color: AppColors.white,
-                        ),
-                        child: Center(child: CustomText(text: 'Videos', fontSize: 16, fontWeight: FontWeight.w500,)),
-                      ),
+
                     ],
-                  ),
-                  SizedBox(height: 20.h),
-
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16.r),
-                      ),
-                      clipBehavior: Clip.antiAlias,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            'assets/images/host_card.png',
-                            fit: BoxFit.cover,
-                            height: 200.h,
-                            width: double.infinity,
-                          ),
-
-                          // Bottom content section
-                          Padding(
-                            padding: EdgeInsets.all(12.w),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                // Title and Status
-                                CustomText(
-                                  text: 'By Alex k.',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                                SizedBox(height: 10.h),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.favorite,
-                                      size: 18.r,
-                                      color: AppColors.red,
-                                    ),
-                                    SizedBox(width: 6.w),
-                                    CustomText(
-                                      text: '24',
-                                      fontSize: 14.sp,
-                                      color: AppColors.grey,
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 8.h),
-
-
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16.r),
-                      ),
-                      clipBehavior: Clip.antiAlias,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            'assets/images/host_card.png',
-                            fit: BoxFit.cover,
-                            height: 200.h,
-                            width: double.infinity,
-                          ),
-
-                          // Bottom content section
-                          Padding(
-                            padding: EdgeInsets.all(12.w),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                // Title and Status
-                                CustomText(
-                                  text: 'By Alex k.',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                                SizedBox(height: 10.h),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.favorite,
-                                      size: 18.r,
-                                      color: AppColors.grey,
-                                    ),
-                                    SizedBox(width: 6.w),
-                                    CustomText(
-                                      text: '24',
-                                      fontSize: 14.sp,
-                                      color: AppColors.grey,
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 8.h),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 10),
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16.r),
-                      ),
-                      clipBehavior: Clip.antiAlias,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            'assets/images/host_card.png',
-                            fit: BoxFit.cover,
-                            height: 200.h,
-                            width: double.infinity,
-                          ),
-
-                          // Bottom content section
-                          Padding(
-                            padding: EdgeInsets.all(12.w),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                // Title and Status
-                                CustomText(
-                                  text: 'By Alex k.',
-                                  fontSize: 16.sp,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                                SizedBox(height: 10.h),
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.favorite,
-                                      size: 18.r,
-                                      color: AppColors.grey,
-                                    ),
-                                    SizedBox(width: 6.w),
-                                    CustomText(
-                                      text: '24',
-                                      fontSize: 14.sp,
-                                      color: AppColors.grey,
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(height: 8.h),
-
-
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-
+                  )
                 ],
               ),
             ),
           ),
-        ],
+        ),
       ),
     );
   }
