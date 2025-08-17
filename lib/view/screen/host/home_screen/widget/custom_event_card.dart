@@ -5,7 +5,6 @@ import 'package:time/utils/app_images/app_images.dart';
 
 import '../../../../../core/app_routes/app_routes.dart';
 import '../../../../../utils/app_colors/app_colors.dart';
-import '../../../../components/custom_image/custom_image.dart';
 import '../../../../components/custom_text/custom_text.dart';
 
 class CustomEventCard extends StatefulWidget {

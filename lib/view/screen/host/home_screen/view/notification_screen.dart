@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:time/view/components/custom_gradient/custom_gradient.dart';
 
 import '../../../../../utils/app_colors/app_colors.dart';
@@ -26,14 +25,17 @@ class _NotificationScreenState extends State<NotificationScreen> {
             automaticallyImplyLeading: false,
             backgroundColor: Colors.transparent,
             elevation: 0,
-            leading: Container(
-              height: 20,
-              width: 20,
-              decoration: BoxDecoration(
-                color: AppColors.white,
-                shape: BoxShape.circle,
+            leading: Padding(
+              padding: const EdgeInsets.all(3.0),
+              child: Container(
+                height: 20,
+                width: 20,
+                decoration: BoxDecoration(
+                  color: AppColors.white,
+                  shape: BoxShape.circle,
+                ),
+                child: BackButton(color: AppColors.black),
               ),
-              child: BackButton(color: AppColors.black),
             ),
             title: CustomText(
               text: "Notification",

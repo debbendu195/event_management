@@ -79,10 +79,31 @@ class _AllEventsState extends State<AllEvents> {
                 Obx(() {
                   return CustomHomeTabBar(
                     curentIndex: homeController.selectedIndex.value,
-                    onTab: () {},
+                    onTab: () {
+                      // This callback can be used for additional actions when any tab is pressed
+                    },
                     tabs: ['All', 'Live', 'Upcoming', 'Past'],
                     onTabChanged: (index) {
+                      // Update the selected index
                       homeController.selectedIndex.value = index;
+
+                      // Navigate to different screens based on tab index
+                      switch (index) {
+                        case 0: // All
+                          Get.toNamed(AppRoutes.allEvents); // or your route name
+                          break;
+                        case 1: // Live
+                          Get.toNamed(AppRoutes.upcomingScreen);
+                          break;
+                        case 2: // Upcoming
+                          Get.toNamed(AppRoutes.pastScreen);
+                          break;
+                        case 3: // Past
+                          Get.toNamed(AppRoutes.updateScreen);
+                          break;
+                        default:
+                          break;
+                      }
                     },
                   );
                 }),

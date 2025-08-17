@@ -6,8 +6,6 @@ import 'package:time/view/components/custom_image/custom_image.dart';
 import 'package:time/view/screen/dmOver/favourite/widget/custom_gallery_card.dart';
 
 import '../../../../../utils/app_colors/app_colors.dart';
-import '../../../../components/custom_button/custom_button.dart';
-import '../../../../components/custom_royel_appbar/custom_royel_appbar.dart';
 import '../../../../components/custom_text/custom_text.dart';
 
 class GalleryScreen extends StatelessWidget {

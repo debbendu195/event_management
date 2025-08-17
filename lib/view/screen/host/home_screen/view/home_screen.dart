@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:time/core/app_routes/app_routes.dart';
 import 'package:time/utils/app_const/app_const.dart';
-import 'package:time/utils/app_icons/app_icons.dart';
 import 'package:time/utils/app_images/app_images.dart';
 import 'package:time/view/components/custom_button/custom_button.dart';
 import 'package:time/view/components/custom_gradient/custom_gradient.dart';
 import 'package:time/view/components/custom_image/custom_image.dart';
 import 'package:time/view/components/custom_nav_bar/navbar.dart';
-import 'package:time/view/components/custom_netwrok_image/custom_network_image.dart';
 
 import '../../../../../utils/app_colors/app_colors.dart';
-import '../../../../../utils/app_icons/app_icons.dart';
 import '../../../../components/custom_text/custom_text.dart';
 import '../widget/custom_event_upcoming.dart';
 

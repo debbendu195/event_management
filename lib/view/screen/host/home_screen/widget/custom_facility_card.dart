@@ -31,7 +31,7 @@ class _CustomFacilityCardState extends State<CustomFacilityCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: AppColors.white_10,
+      color: AppColors.white,
       elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8),
@@ -89,8 +89,9 @@ class _CustomFacilityCardState extends State<CustomFacilityCard> {
                   Padding(
                     padding: const EdgeInsets.only(bottom: 10,top:3),
                     child: Container(
-                      height: 200,
-                      width: double.infinity,
+                    //  height: MediaQuery.sizeOf(context).height/3,
+                    //  width: double.infinity,
+                      padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         border: Border.all(color: Colors.grey.shade300, width: 1),
                         borderRadius: BorderRadius.circular(12),
@@ -100,6 +101,7 @@ class _CustomFacilityCardState extends State<CustomFacilityCard> {
                           Row(
                             children: [
                               Checkbox(
+                                activeColor: Colors.blue,
                                 value: true,
                                 onChanged: (value) {},
                               ),

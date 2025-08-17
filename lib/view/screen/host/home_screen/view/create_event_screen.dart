@@ -56,6 +56,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.white,
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 18),
@@ -174,63 +175,61 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
               ),
               SizedBox(height: 20,),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomText(
-                    text: 'Start Time',
-                    color: AppColors.black,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16.w,
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: 'Start Time',
+                        color: AppColors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16.w,
+                      ),
+                      SizedBox(height: 8,),
+                      Container(
+                        height: 58,
+                        width: 179,
+                        alignment: Alignment.centerRight,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey.shade300, width: 1),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CustomImage(imageSrc: AppImages.clock),
+                        ),
+                      ),
+                    ],
                   ),
-                  CustomText(
-                    text: 'End Time',
-                    color: AppColors.black,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16.w,
+                  SizedBox(width: 16,),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomText(
+                        text: 'Start Time',
+                        color: AppColors.black,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16.w,
+                      ),
+                      SizedBox(height: 8,),
+                      Container(
+                        height: 58,
+                        width: 179,
+                        alignment: Alignment.centerRight,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.grey.shade300, width: 1),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: CustomImage(imageSrc: AppImages.clock),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-              Row(
-                children: [
-                  Container(
-                    height: 58,
-                    width: 186,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.shade300, width: 1),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CustomText(text: 'Clock'),
-                          CustomImage(imageSrc: AppImages.clock),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 20),
-                  Container(
-                    height: 58,
-                    width: 186,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey.shade300, width: 1),
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          CustomText(text: 'Clock'),
-                          CustomImage(imageSrc: AppImages.clock),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
+
 
              /* SizedBox(height: 10),
               CustomText(text: 'Event Type', color: AppColors.black,
@@ -260,9 +259,8 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
 
               SizedBox(height: 20,),
               CustomText(text: 'Venue Facilities', fontWeight: FontWeight.w500, fontSize: 16,),
-              Container(
-                height: 75,
-                width: double.infinity,
+              CustomMenuButton(items: ['Event 1', 'Event 2', 'Event 3', 'Event 4'], hint: 'Venue Facilities',),
+              /*Container(
                 decoration: BoxDecoration(
                   color: AppColors.white_10,
                   borderRadius: BorderRadius.circular(12),
@@ -278,53 +276,23 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                     ],
                   ),
                 ),
-              ),
+              ),*/
               SizedBox(height: 20,),
               CustomText(text: 'Event Category', fontWeight: FontWeight.w500, fontSize: 16,),
               SizedBox(height: 10,),
-              Container(
-                height: 75,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: AppColors.white_10,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomMenuButton(
-                        items: ['Parties', 'Food Festivals', 'Neighborhood Event', 'Family-Friendly', 'Sports', 'Concerts', 'Custom'],
-                        hint: 'Choose Event Category',
-                      ),
-                    ],
-                  ),
-                ),
+              CustomMenuButton(
+              items: ['Parties', 'Food Festivals', 'Neighborhood Event', 'Family-Friendly', 'Sports', 'Concerts', 'Custom'],
+              hint: 'Choose Event Category',
               ),
+
               SizedBox(height: 20,),
               CustomText(text: 'Event Features', fontWeight: FontWeight.w500, fontSize: 16,),
               SizedBox(height: 10,),
-              Container(
-                height: 75,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: AppColors.white_10,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
+
                       CustomMenuButton(
                         items: ['Pet Friendly', 'ASL Interpreter', 'wheelchair accessible', 'Indoor', 'Outdoor'],
                         hint: 'Choose Event Features',
                       ),
-                    ],
-                  ),
-                ),
-              ),
               SizedBox(height: 20,),
               Container(
                 height: 50,
@@ -404,7 +372,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                 ),
               ),
               SizedBox(height: 30),
-              CustomFacilityCard(preicon: CustomImage(imageSrc: AppImages.gellary), title: 'Media & Social',),
+              CustomFacilityCard(preicon: Container(height: 50, child: CustomImage(imageSrc: AppImages.gellary)), title: 'Media & Social',),
               SizedBox(height: 30),
               Container(
                 height: 50,
@@ -544,7 +512,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                           width: 311,
                           decoration: BoxDecoration(
                             border: Border.all(color: Colors.grey.shade300, width: 1),
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(6),
                           ),
                           child: Center(child: CustomText(text: '\$ price', textAlign: TextAlign.start,)),
                         ),
@@ -555,7 +523,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
               ),
               SizedBox(height: 20,),
               Container(
-                height: 190,
+                height: 150,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.grey.shade300, width: 1),
@@ -570,11 +538,11 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                       Row(
                         children: [
                           Container(
-                            height: 58,
-                            width: 175,
+                            height: 34,
+                            width: 145,
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey.shade300, width: 1),
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(6),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(17.0),
@@ -583,11 +551,11 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                           ),
                           SizedBox(width: 20),
                           Container(
-                            height: 58,
-                            width: 175,
+                            height: 34,
+                            width: 145,
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey.shade300, width: 1),
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(6),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(17.0),
@@ -600,11 +568,11 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                       Row(
                         children: [
                           Container(
-                            height: 58,
-                            width: 175,
+                            height: 34,
+                            width: 145,
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey.shade300, width: 1),
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(6),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(17.0),
@@ -613,11 +581,11 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                           ),
                           SizedBox(width: 20),
                           Container(
-                            height: 58,
-                            width: 175,
+                            height: 34,
+                            width: 145,
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.grey.shade300, width: 1),
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(6),
                             ),
                             child: Padding(
                               padding: const EdgeInsets.all(17.0),
@@ -626,7 +594,6 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
                           ),
                         ],
                       ),
-
                     ],
                   ),
                 ),
@@ -635,6 +602,7 @@ class _CreateEventScreenState extends State<CreateEventScreen> {
               CustomButton(onTap: (){}, title: 'Show time', fontSize: 16, fontWeight: FontWeight.w600, fillColor: AppColors.green_01, borderRadius: 30,),
               SizedBox(height: 30,),
 
+              // CustomRoyelDropdown(),
 
 
 

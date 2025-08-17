@@ -8,7 +8,6 @@ import '../../../../../../utils/app_colors/app_colors.dart';
 import '../../../../../../utils/app_images/app_images.dart';
 import '../../../../../components/custom_button/custom_button.dart';
 import '../../../../../components/custom_image/custom_image.dart';
-import '../../../../../components/custom_royel_appbar/custom_royel_appbar.dart';
 import '../../../../../components/custom_text/custom_text.dart';
 
 class StripeScreen extends StatelessWidget {
@@ -74,11 +73,38 @@ class StripeScreen extends StatelessWidget {
                             onTap: () {
                               Get.toNamed(AppRoutes.stripeScreen);
                             },
+                            child: Expanded(
+                              child: Container(
+                                height: 82,
+                                width: 158,
+                                decoration: BoxDecoration(
+                                  color: AppColors.green_02,
+                                  border: Border.all(
+                                    color: AppColors.green_05, // Border width
+                                  ),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    CustomImage(imageSrc: AppImages.stripe),
+                                    CustomText(
+                                      text: 'Stripe',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: AppColors.black,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Expanded(
                             child: Container(
                               height: 82,
                               width: 158,
                               decoration: BoxDecoration(
-                                color: AppColors.green_02,
                                 border: Border.all(
                                   color: AppColors.green_05, // Border width
                                 ),
@@ -87,38 +113,15 @@ class StripeScreen extends StatelessWidget {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  CustomImage(imageSrc: AppImages.stripe),
+                                  CustomImage(imageSrc: AppImages.paypal),
                                   CustomText(
-                                    text: 'Stripe',
+                                    text: 'PauPal',
                                     fontWeight: FontWeight.w400,
                                     fontSize: 14,
-                                    color: AppColors.black,
+                                    color: AppColors.black_06,
                                   ),
                                 ],
                               ),
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          Container(
-                            height: 82,
-                            width: 158,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: AppColors.green_05, // Border width
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CustomImage(imageSrc: AppImages.paypal),
-                                CustomText(
-                                  text: 'PauPal',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  color: AppColors.black_06,
-                                ),
-                              ],
                             ),
                           ),
                         ],
@@ -126,49 +129,55 @@ class StripeScreen extends StatelessWidget {
                       SizedBox(height: 20),
                       Row(
                         children: [
-                          Container(
-                            height: 82,
-                            width: 158,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: AppColors.green_05, // Border width
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CustomImage(imageSrc: AppImages.bank),
-                                CustomText(
-                                  text: 'Bank',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  color: AppColors.black_06,
+                          InkWell(
+                            child: Expanded(
+                              child: Container(
+                                height: 82,
+                                width: 158,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: AppColors.green_05, // Border width
+                                  ),
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
-                              ],
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    CustomImage(imageSrc: AppImages.bank),
+                                    CustomText(
+                                      text: 'Bank',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: AppColors.black_06,
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                           SizedBox(width: 10),
-                          Container(
-                            height: 82,
-                            width: 158,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: AppColors.green_05, // Border width
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CustomImage(imageSrc: AppImages.upi),
-                                CustomText(
-                                  text: 'UPI',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  color: AppColors.black_06,
+                          Expanded(
+                            child: Container(
+                              height: 82,
+                              width: 158,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: AppColors.green_05, // Border width
                                 ),
-                              ],
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CustomImage(imageSrc: AppImages.upi),
+                                  CustomText(
+                                    text: 'UPI',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: AppColors.black_06,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],

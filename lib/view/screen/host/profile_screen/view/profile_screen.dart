@@ -4,7 +4,6 @@ import 'package:time/utils/app_images/app_images.dart';
 import 'package:time/view/components/custom_gradient/custom_gradient.dart';
 import 'package:time/view/components/custom_image/custom_image.dart';
 import 'package:time/view/components/custom_nav_bar/navbar.dart';
-import 'package:time/view/components/custom_text_field/custom_text_field.dart';
 
 import '../../../../../core/app_routes/app_routes.dart';
 import '../../../../../utils/app_colors/app_colors.dart';

@@ -71,6 +71,35 @@ class PaymentScreen extends StatelessWidget {
                             onTap: () {
                               Get.toNamed(AppRoutes.stripeScreen);
                             },
+                            child: Expanded(
+                              flex: 1,
+                              child: Container(
+                                height: 82,
+                                width: 158,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: AppColors.green_05, // Border width
+                                  ),
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    CustomImage(imageSrc: AppImages.stripe),
+                                    CustomText(
+                                      text: 'Stripe',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: AppColors.black,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Expanded(
+                            flex: 1,
                             child: Container(
                               height: 82,
                               width: 158,
@@ -83,38 +112,15 @@ class PaymentScreen extends StatelessWidget {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  CustomImage(imageSrc: AppImages.stripe),
+                                  CustomImage(imageSrc: AppImages.paypal),
                                   CustomText(
-                                    text: 'Stripe',
+                                    text: 'PauPal',
                                     fontWeight: FontWeight.w400,
                                     fontSize: 14,
-                                    color: AppColors.black,
+                                    color: AppColors.black_06,
                                   ),
                                 ],
                               ),
-                            ),
-                          ),
-                          SizedBox(width: 10),
-                          Container(
-                            height: 82,
-                            width: 158,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: AppColors.green_05, // Border width
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CustomImage(imageSrc: AppImages.paypal),
-                                CustomText(
-                                  text: 'PauPal',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  color: AppColors.black_06,
-                                ),
-                              ],
                             ),
                           ),
                         ],
@@ -122,49 +128,55 @@ class PaymentScreen extends StatelessWidget {
                       SizedBox(height: 20),
                       Row(
                         children: [
-                          Container(
-                            height: 82,
-                            width: 158,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: AppColors.green_05, // Border width
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CustomImage(imageSrc: AppImages.bank),
-                                CustomText(
-                                  text: 'Bank',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  color: AppColors.black_06,
+                          InkWell(
+                            child: Expanded(
+                              child: Container(
+                                height: 82,
+                                width: 158,
+                                decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: AppColors.green_05, // Border width
+                                  ),
+                                  borderRadius: BorderRadius.circular(5),
                                 ),
-                              ],
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    CustomImage(imageSrc: AppImages.bank),
+                                    CustomText(
+                                      text: 'Bank',
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 14,
+                                      color: AppColors.black_06,
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                           SizedBox(width: 10),
-                          Container(
-                            height: 82,
-                            width: 158,
-                            decoration: BoxDecoration(
-                              border: Border.all(
-                                color: AppColors.green_05, // Border width
-                              ),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                CustomImage(imageSrc: AppImages.upi),
-                                CustomText(
-                                  text: 'UPI',
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 14,
-                                  color: AppColors.black_06,
+                          Expanded(
+                            child: Container(
+                              height: 82,
+                              width: 158,
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  color: AppColors.green_05, // Border width
                                 ),
-                              ],
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  CustomImage(imageSrc: AppImages.upi),
+                                  CustomText(
+                                    text: 'UPI',
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 14,
+                                    color: AppColors.black_06,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
