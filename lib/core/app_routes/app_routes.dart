@@ -21,8 +21,10 @@ import '../../view/screen/host/home_screen/view/group_event_screen.dart';
 import '../../view/screen/host/home_screen/view/home_screen.dart';
 import '../../view/screen/host/home_screen/view/notification_screen.dart';
 import '../../view/screen/host/message_screen/view/message_list_screen.dart';
+import '../../view/screen/host/message_screen/view/unread_screen.dart';
 import '../../view/screen/host/profile_screen/view/profile_screen.dart';
 import '../../view/screen/host/profile_screen/view/settings/change_pass_screen.dart';
+import '../../view/screen/host/profile_screen/view/settings/custom_ticket_history_screen.dart';
 import '../../view/screen/host/profile_screen/view/settings/edit_profile_screen.dart';
 import '../../view/screen/host/profile_screen/view/settings/payment_screen.dart';
 import '../../view/screen/host/profile_screen/view/settings/privacy_screen.dart';
@@ -73,6 +75,8 @@ class AppRoutes {
   static const String updateScreen = "/UpdateScreen";
   static const String dmLiveEventScreen = "/DmLiveEventScreen";
   static const String vanueFacilitiesScreen = "/VanueFacilitiesScreen";
+  static const String unreadScreen = "/unreadScreen";
+  static const String customTicketHistoryScreen = "/CustomTicketHistoryScreen";
   // static const String customMenuButton = "/CustomMenuButton";
 
 
@@ -112,6 +116,8 @@ class AppRoutes {
     GetPage(name: updateScreen, page: () => UpdateScreen()),
     GetPage(name: dmLiveEventScreen, page: () => DmLiveEventScreen()),
     GetPage(name: vanueFacilitiesScreen, page: () => VanueFacilitiesScreen()),
+    GetPage(name: unreadScreen, page: () => UnreadScreen()),
+    GetPage(name: customTicketHistoryScreen, page: () => CustomTicketHistoryScreen()),
     // GetPage(name: customMenuButton, page: () => CustomMenuButton()),
 
 

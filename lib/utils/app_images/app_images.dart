@@ -59,7 +59,7 @@ class AppImages {
   static const String pen = "$basePath/pen.png";
   static const String downarrow = "$basePath/downarrow.png";
   static const String uparrow = "$basePath/uparrow.png";
-
+  static const String complete = "$basePath/complete.png";
 
 
 

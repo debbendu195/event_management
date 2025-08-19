@@ -7,6 +7,7 @@ import 'package:time/view/components/custom_button/custom_button.dart';
 import 'package:time/view/components/custom_gradient/custom_gradient.dart';
 import 'package:time/view/components/custom_image/custom_image.dart';
 import 'package:time/view/components/custom_nav_bar/navbar.dart';
+import 'package:time/view/components/custom_royel_appbar/custom_royel_appbar.dart';
 
 import '../../../../../utils/app_colors/app_colors.dart';
 import '../../../../components/custom_text/custom_text.dart';
@@ -19,164 +20,164 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomGradient(
       child: Scaffold(
+       /* appBar: CustomRoyelAppbar(
+          titleName: 'Mdskjdflksadfs sdf' ,
+          rightIcon: AppImages.notification,
+        ),*/
         backgroundColor: Colors.transparent,
-        body: Stack(
-          children: [
-            SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 80,
-                ),
-                child: Column(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
+              vertical: 80,
+            ),
+            child: Column(
+              children: [
+                Row(
                   children: [
-                    Row(
+                    CircleAvatar(
+                      radius: 30, // Adjust size
+                      backgroundImage: AssetImage(AppImages.img),
+                    ),
+                    SizedBox(width: 20),
+                    // CustomImage(imageSrc: AppImages.img, height: 50, width: 50,),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CircleAvatar(
-                          radius: 30, // Adjust size
-                          backgroundImage: AssetImage(AppImages.img),
+                        CustomText(
+                          text: 'Md Kamran Khan',
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
                         ),
-                        SizedBox(width: 20),
-                        // CustomImage(imageSrc: AppImages.img, height: 50, width: 50,),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CustomText(
-                              text: 'Md Kamran Khan',
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                            ),
-                            CustomText(
-                              text: 'Event Host',
-                              fontSize: 14,
-                              color: Colors.black,
-                            ),
-                          ],
-                        ),
-                        Spacer(),
-                        Stack(
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                Get.toNamed(AppRoutes.notificationScreen);
-                              },
-                              child: Container(
-                                height: 38.5,
-                                width: 38.5,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: AppColors.white,
-                                ),
-                                child: CustomImage(
-                                  imageSrc: AppImages.notification,
-                                ),
-                                /*IconButton(
-                                  icon: Icon(Icons.notifications_none),
-                                  onPressed: () {
-                                    Get.toNamed(AppRoutes.notificationScreen);
-                                  },
-                                ),*/
-                              ),
-                            ),
-                            Positioned(
-                              right: 11,
-                              bottom: 24,
-                              child: Container(
-                                height: 6,
-                                width: 6,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: AppColors.green,
-                                ),
-                              ),
-                            ),
-                          ],
+                        CustomText(
+                          text: 'Event Host',
+                          fontSize: 14,
+                          color: Colors.black,
                         ),
                       ],
                     ),
-                    SizedBox(height: 30),
+                    Spacer(),
                     Stack(
                       children: [
-                        CustomButton(
+                        GestureDetector(
                           onTap: () {
-                            Get.toNamed(AppRoutes.createEventScreen);
+                            Get.toNamed(AppRoutes.notificationScreen);
                           },
-                          title: 'Create Event',
-                          fillColor: AppColors.green_01,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          borderRadius: 30,
-                          left: 50,
-                        ),
-                        Positioned(
-                          left: 106,
-                          top: 14,
                           child: Container(
-                            height: 25,
-                            width: 25,
+                            height: 38.5,
+                            width: 38.5,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(8),
-                              ),
+                              borderRadius: BorderRadius.circular(30),
                               color: AppColors.white,
                             ),
-                            child: InkWell(
-                              onTap: () {
-                                Get.toNamed(AppRoutes.createEventScreen);
+                            child: CustomImage(
+                              imageSrc: AppImages.notification,
+                            ),
+                            /*IconButton(
+                              icon: Icon(Icons.notifications_none),
+                              onPressed: () {
+                                Get.toNamed(AppRoutes.notificationScreen);
                               },
-                              child: Icon(Icons.add, color: AppColors.green_01),
+                            ),*/
+                          ),
+                        ),
+                        Positioned(
+                          right: 11,
+                          bottom: 24,
+                          child: Container(
+                            height: 6,
+                            width: 6,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: AppColors.green,
                             ),
                           ),
                         ),
                       ],
                     ),
-
-                    // Container(
-                    //   height: 50,
-                    //   width: double.infinity,
-                    //   decoration: BoxDecoration(
-                    //     borderRadius: BorderRadius.all(Radius.circular(30)),
-                    //     color: AppColors.green_01,
-                    //   ),
-                    //   child: Row(
-                    //     mainAxisAlignment: MainAxisAlignment.center,
-                    //     children: [
-                    //       Container(
-                    //         height: 30,
-                    //         width: 30,
-                    //         decoration: BoxDecoration(
-                    //           borderRadius: BorderRadius.all(Radius.circular(8)),
-                    //           color: AppColors.white,
-                    //         ),
-                    //         child: Row(
-                    //           children: [
-                    //             Icon(Icons.add, color: AppColors.green_01),
-                    //             SizedBox(width: 20,),
-                    //             CustomText(text: 'Create Event'),
-                    //           ],
-                    //         ),
-                    //       ),
-                    //     ],
-                    //   ),
-                    // ),
-                    SizedBox(height: 20),
-
-                    Column(
-                      children: List.generate(2, (value) {
-                        return CustomEventUpcoming(
-                          img: AppConstants.ntrition1,
-                          title: "Summer Music Festival",
-                          onTap: (){
-                            Get.toNamed(AppRoutes.groupEventScreen);
+                  ],
+                ),
+                SizedBox(height: 30),
+                Stack(
+                  children: [
+                    CustomButton(
+                      onTap: () {
+                        Get.toNamed(AppRoutes.createEventScreen);
+                      },
+                      title: 'Create Event',
+                      fillColor: AppColors.green_01,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      borderRadius: 30,
+                      left: 50,
+                    ),
+                    Positioned(
+                      left: 106,
+                      top: 14,
+                      child: Container(
+                        height: 25,
+                        width: 25,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(8),
+                          ),
+                          color: AppColors.white,
+                        ),
+                        child: InkWell(
+                          onTap: () {
+                            Get.toNamed(AppRoutes.createEventScreen);
                           },
-                        );
-                      }),
+                          child: Icon(Icons.add, color: AppColors.green_01),
+                        ),
+                      ),
                     ),
                   ],
                 ),
-              ),
+
+                // Container(
+                //   height: 50,
+                //   width: double.infinity,
+                //   decoration: BoxDecoration(
+                //     borderRadius: BorderRadius.all(Radius.circular(30)),
+                //     color: AppColors.green_01,
+                //   ),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.center,
+                //     children: [
+                //       Container(
+                //         height: 30,
+                //         width: 30,
+                //         decoration: BoxDecoration(
+                //           borderRadius: BorderRadius.all(Radius.circular(8)),
+                //           color: AppColors.white,
+                //         ),
+                //         child: Row(
+                //           children: [
+                //             Icon(Icons.add, color: AppColors.green_01),
+                //             SizedBox(width: 20,),
+                //             CustomText(text: 'Create Event'),
+                //           ],
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                SizedBox(height: 20),
+
+                Column(
+                  children: List.generate(2, (value) {
+                    return CustomEventUpcoming(
+                      img: AppConstants.ntrition1,
+                      title: "Summer Music Festival",
+                      onTap: (){
+                        Get.toNamed(AppRoutes.groupEventScreen);
+                      },
+                    );
+                  }),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
         bottomNavigationBar: NavBar(currentIndex: 0),
       ),

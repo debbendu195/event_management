@@ -193,7 +193,9 @@ class SettingsScreen extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.toNamed(AppRoutes.customTicketHistoryScreen);
+                  },
                   child: CustomText(
                     text: 'Following',
                     fontSize: 16,

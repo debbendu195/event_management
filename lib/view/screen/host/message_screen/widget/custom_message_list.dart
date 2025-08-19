@@ -21,60 +21,62 @@ class CustomMessageList extends StatefulWidget {
 class _CustomMessageListState extends State<CustomMessageList> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 75,
-      color: AppColors.white,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: Row(
-          children: [
-            //  CircleAvatar(
-            //   radius: 30,
-            //   backgroundImage: widget.img,
-            // ),
-            SizedBox(
-              height:50 ,
-              width: 50,
-              child: CircleAvatar(
-                backgroundImage: widget.img ,
-              ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Card(
+        elevation: 0,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Row(
+            children: [
+              //  CircleAvatar(
+              //   radius: 30,
+              //   backgroundImage: widget.img,
+              // ),
+              SizedBox(
+                height:50 ,
+                width: 50,
+                child: CircleAvatar(
+                  backgroundImage: widget.img ,
+                ),
 
-            ),
-            Flexible(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children:  [
-                  CustomText(
-                    text: widget.title ?? " ",
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    maxLines: 10,
-                    textAlign: TextAlign.left,
-                    left: 16,
-                    right: 16,
-                  ),
-                  SizedBox(height: 4,),
-                  CustomText(
-                    text: widget.subtitle?? " ",
+              ),
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children:  [
+                    CustomText(
+                      text: widget.title ?? " ",
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      maxLines: 10,
+                      textAlign: TextAlign.left,
+                      left: 16,
+                      right: 16,
+                    ),
+                    SizedBox(height: 4,),
+                    CustomText(
+                      text: widget.subtitle?? " ",
+                      fontSize: 14,
+                      color: AppColors.black_02,
+                      left: 16,
+                      right: 16,
+                    ),
+                  ],
+                ),
+              ),
+              Column(
+                children: [
+                  CustomText(text:widget.time ?? '',
                     fontSize: 14,
-                    color: AppColors.black_02,
-                    left: 16,
-                    right: 16,
                   ),
+                  widget.icon1 ?? SizedBox(),
                 ],
               ),
-            ),
-            Column(
-              children: [
-                CustomText(text:widget.time ?? '',
-                  fontSize: 14,
-                ),
-                widget.icon1 ?? SizedBox(),
-              ],
-            ),
-            SizedBox(width: 19,),
-            widget.icon2 ?? SizedBox(),
-          ],
+              SizedBox(width: 19,),
+              widget.icon2 ?? SizedBox(),
+            ],
+          ),
         ),
       ),
     );
