@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:time/utils/app_images/app_images.dart';
-import 'package:time/view/components/custom_image/custom_image.dart';
+import 'package:time/view/components/custom_gradient/custom_gradient.dart';
 import 'package:time/view/components/custom_text_field/custom_text_field.dart';
+import 'package:time/view/screen/dmOver/home_screen/view/google_map/google_map_page.dart';
 
 import '../../../../../core/app_routes/app_routes.dart';
 import '../../../../../utils/app_colors/app_colors.dart';
@@ -14,18 +15,12 @@ class DmHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Color(0xFFD0F2D3), Color(0xFF5BCDA4)],
-              ),
-            ),
-            child: SingleChildScrollView(
+    return CustomGradient(
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Stack(
+          children: [
+            SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 10,
@@ -34,17 +29,17 @@ class DmHomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    /// Top Bar
                     Row(
                       children: [
-                        CircleAvatar(
-                          radius: 30, // Adjust size
+                        const CircleAvatar(
+                          radius: 30,
                           backgroundImage: AssetImage('assets/images/img.jpg'),
                         ),
-                        SizedBox(width: 20),
-                        // CustomImage(imageSrc: AppImages.img, height: 50, width: 50,),
+                        const SizedBox(width: 20),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+                          children: const [
                             CustomText(
                               text: 'Good Morning',
                               fontSize: 16,
@@ -57,7 +52,7 @@ class DmHomeScreen extends StatelessWidget {
                             ),
                           ],
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Stack(
                           children: [
                             Container(
@@ -68,7 +63,7 @@ class DmHomeScreen extends StatelessWidget {
                                 color: AppColors.white,
                               ),
                               child: IconButton(
-                                icon: Icon(Icons.notifications_none),
+                                icon: const Icon(Icons.notifications_none),
                                 onPressed: () {
                                   Get.toNamed(AppRoutes.notificationScreen);
                                 },
@@ -90,105 +85,145 @@ class DmHomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 30),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomText(
-                          text: 'Find Best Events',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 24,
-                        ),
-                        CustomText(
-                          text: 'Near You.',
-                          fontWeight: FontWeight.w600,
-                          fontSize: 24,
-                        ),
-                      ],
+
+                    const SizedBox(height: 30),
+
+                    /// Headings
+                    const CustomText(
+                      text: 'Find Best Events',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 24,
                     ),
-                    SizedBox(height: 20),
+                    const CustomText(
+                      text: 'Near You.',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 24,
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    /// Search
                     CustomTextField(
-                      prefixIcon: Icon(Icons.search, color: AppColors.green),
+                      prefixIcon: const Icon(Icons.search, color: AppColors.green),
                       hintText: 'Explore events',
                       readOnly: true,
-                      onTap: (){
+                      onTap: () {
                         Get.toNamed(AppRoutes.eventExploreScreen);
                       },
                     ),
-                    SizedBox(height: 10),
-                    CustomTextField(
-                      onTap: (){
-                        Get.toNamed(AppRoutes.fliterEventScreen);
-                      },
-                      weight: 182,
-                      fieldBorderRadius: 30,
-                      readOnly: true,
-                      prefixIcon: Icon(Icons.menu),
-                      hintText: 'Explore Filters',
-                      fontWeight: FontWeight.w500,
-                      fontSize: 16,
-                      suffixIcon: Icon(Icons.arrow_downward),
-                    ),
-                    SizedBox(height: 20),
+
+                    const SizedBox(height: 10),
+
+                    /// Filters
                     Row(
                       children: [
-                        RichText(
-                          text: TextSpan(
-                            text: 'Find events near ',
-                            style: TextStyle(fontSize: 16, color: Colors.black),
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: 'New York,NY',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  color: Colors.black,
-                                ),
-                              ),
-                            ],
+                        CustomTextField(
+                          onTap: () {
+                            Get.toNamed(AppRoutes.fliterEventScreen);
+                          },
+                          weight: 182,
+                          fieldBorderRadius: 30,
+                          readOnly: true,
+                          prefixIcon: const Icon(Icons.menu),
+                          hintText: 'Explore Filters',
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16,
+                          suffixIcon: const Icon(Icons.arrow_downward),
+                        ),
+                        const SizedBox(width: 20),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 18),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            color: AppColors.white,
+                          ),
+                          child: const Center(
+                            child: CustomText(
+                              text: 'Non Event',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14,
+                            ),
                           ),
                         ),
+                      ],
+                    ),
+
+                    const SizedBox(height: 20),
+
+                    /// Location
+                    Row(
+                      children: const [
+                        Text(
+                          'Find events near ',
+                          style: TextStyle(fontSize: 16, color: Colors.black),
+                        ),
+                        Text(
+                          'New York,NY',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: Colors.black,
+                          ),
+                        ),
+                        SizedBox(width: 5),
                         Icon(Icons.edit, size: 18),
                       ],
                     ),
-                    SizedBox(height: 20),
+
+                    const SizedBox(height: 20),
+
+                    /// Tags
                     Row(
                       children: [
                         Container(
                           width: 10,
                           height: 10,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: AppColors.green,
                             shape: BoxShape.circle,
                           ),
                         ),
-                        SizedBox(width: 10),
-                        TextButton(onPressed: (){Get.toNamed(AppRoutes.dmLiveEventScreen);}, child: CustomText(text: 'Live Event', color: AppColors.black,)),
-                        // CustomText(text: 'Live Event'),
-                        SizedBox(width: 20),
+                        const SizedBox(width: 10),
+                        TextButton(
+                          onPressed: () {
+                            Get.toNamed(AppRoutes.dmLiveEventScreen);
+                          },
+                          child: const CustomText(
+                            text: 'Live Event',
+                            color: AppColors.black,
+                          ),
+                        ),
+                        const SizedBox(width: 20),
                         Container(
                           width: 10,
                           height: 10,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: AppColors.green,
                             shape: BoxShape.circle,
                           ),
                         ),
-                        SizedBox(width: 10),
-                        TextButton(onPressed: (){}, child: CustomText(text: 'Up Coming Live', color: AppColors.black,),)
-                        // CustomText(text: 'Up Coming Live'),
+                        const SizedBox(width: 10),
+                        TextButton(
+                          onPressed: () {},
+                          child: const CustomText(
+                            text: 'Up Coming Live',
+                            color: AppColors.black,
+                          ),
+                        ),
                       ],
                     ),
-                    SizedBox(width: 10),
-                    Center(child: CustomImage(imageSrc: AppImages.map_dm, height: 268,))
+
+                    const SizedBox(height: 20),
+
+                    const GoogleMapPage(),
                   ],
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
+        bottomNavigationBar: DmNab(currentIndex: 0),
       ),
-     bottomNavigationBar: DmNab(currentIndex: 0),
     );
   }
 }
